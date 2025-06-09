@@ -10,6 +10,10 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const navItems = [
     {
+      title: 'Home',
+      href: '/'
+    },
+    {
       title: 'About',
       href: '/about'
     },
