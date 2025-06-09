@@ -1,10 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Container from '../container'
-import Image from 'next/image'
 import Link from 'next/link'
-import { title } from 'process'
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 
 const Navbar = () => {
+  const [hovered, setHovered] = useState<null | number>(null);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const { scrollY } = useScroll();
   const navItems = [
     {
       title: 'About',
@@ -23,18 +26,44 @@ const Navbar = () => {
       href: '/contact'
     }
   ]
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
+
   return (
-    <Container className="flex items-center justify-between py-4">
-      <Link href="/">
-        <Image src="/avatar.png" alt="Logo" width={40} height={40} className='rounded-full object-cover' />
-      </Link>
-      <nav className="flex space-x-4 text-sm md:text-base items-center text-black dark:text-white">
-        {navItems.map((item, idx) => (
-          <Link href={item.href} key={idx}>
-            {item.title}
-          </Link>
-        ))}
-      </nav>
+    <Container>
+      <motion.nav className="md:fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto flex items-center justify-between py-4 pt-6 rounded-full px-6 mt-2"
+        animate={{
+          boxShadow: scrolled ? "var(--shadow-aesthetic)" : "none",
+          width: scrolled ? "50%" : "60%",
+          y: scrolled ? 5 : 0,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+      >
+        <div>
+          img
+        </div>
+        <div className="flex items-center">
+          {navItems.map((item, idx) => (
+            <Link href={item.href} key={idx} className='relative text-sm px-4 py-2'
+              onMouseEnter={() => setHovered(idx)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              {hovered === idx && (<motion.span layoutId='hovered-span' className='h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-neutral-700'></motion.span>)}
+              <span className='relative z-10'>{item.title}</span>
+            </Link>
+          ))}
+        </div>
+
+      </motion.nav>
     </Container>
   )
 }
