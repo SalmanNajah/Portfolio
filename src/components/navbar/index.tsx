@@ -37,9 +37,9 @@ const Navbar = () => {
 
   return (
     <Container>
-      <motion.nav className="md:fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto flex items-center justify-between py-4 pt-6 rounded-full px-6 mt-2"
+      <motion.nav className="md:fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto flex items-center justify-between md:py-4 rounded-full px-6 mt-2"
         animate={{
-          boxShadow: scrolled ? "var(--shadow-aesthetic)" : "none",
+          boxShadow: scrolled ? "var(--shadow-derek)" : "none",
           width: scrolled ? "50%" : "60%",
           y: scrolled ? 5 : 0,
         }}
@@ -49,7 +49,7 @@ const Navbar = () => {
         }}
       >
         <div>
-          img
+          dark
         </div>
         <div className="flex items-center">
           {navItems.map((item, idx) => (

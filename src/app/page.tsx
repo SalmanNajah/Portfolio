@@ -12,6 +12,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
+        viewport={{ once: true }}
       >
         <Link href="/">
           <Image src="/avatar.png" alt="Logo" width={150} height={150} className="rounded-2xl object-cover" />
@@ -23,10 +24,14 @@ export default function Home() {
         whileInView={{ opacity: 1 }}>
         <motion.h1 initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }} className="text-2xl md:text-4xl font-bold text-primary tracking-tight">Salman Najah</motion.h1>
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-4xl font-bold text-primary tracking-tight">Salman Najah</motion.h1>
         <motion.p initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }} className="text-secondary pt-4 text-sm md:text-base max-w-md">
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-secondary pt-4 text-sm md:text-base max-w-md">
           <span className="text-primary">21,</span> I build things, break stuff, and figure it out as I go.
           Deep into web, systems, and anything that scales or sparks curiosity.
           Obsessed with clean builds, clever tools, and ideas that stick.
