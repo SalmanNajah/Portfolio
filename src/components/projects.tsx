@@ -29,21 +29,21 @@ const Projects = () => {
             title: "Task Manager App",
             description: "Organize tasks, set deadlines, and track progress. Responsive and user-friendly interface.",
             link: "https://github.com/yourusername/task-manager-app",
-            image: "/image4.png",
+            image: "/image3.png",
             skills: ["React", "Redux", "TypeScript", "Firebase"]
         },
         {
             title: "Weather Dashboard",
             description: "Weather dashboard with real-time data, forecasts, and location search. Built with APIs.",
             link: "https://github.com/yourusername/weather-dashboard",
-            image: "/image5.png",
+            image: "/image1.png",
             skills: ["React", "OpenWeatherMap API", "Tailwind CSS"]
         },
         {
             title: "Blog Platform",
             description: "Full-featured blog platform with markdown support and user authentication.",
             link: "https://github.com/yourusername/blog-platform",
-            image: "/image6.png",
+            image: "/image2.png",
             skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
         }
     ]
@@ -67,3 +67,10 @@ const Projects = () => {
 }
 
 export default Projects
+
+//TODO
+// 1. Add links to the projects (make whole card clickable) using next/link
+// 2. Add animations to the projects
+// 3. style the cards properly
+// 4. Add hover effects to the cards
+// 5. Add techstacks used (yt video)
