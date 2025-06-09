@@ -74,3 +74,10 @@ export default Projects
 // 3. style the cards properly
 // 4. Add hover effects to the cards
 // 5. Add techstacks used (yt video)
+// 6. Add a button to view the project on GitHub
+// 7. Add a button to view the project live (if applicable) 
+// 8. Add dark mode support
+// 9. Add blogs
+// 10. Add a contact form
+// 11. Add a footer with social links
+
