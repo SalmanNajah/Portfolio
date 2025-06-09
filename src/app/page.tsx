@@ -8,7 +8,7 @@ import Projects from "@/components/projects";
 export default function Home() {
   return (
     <div>
-    <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8">
+    <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b border-neutral-200 dark:border-neutral-800 ">
       <motion.div
         className="order-1 md:order-2 mb-4 md:mb-0 flex justify-center md:justify-start"
         initial={{ opacity: 0, filter: "blur(8px)" }}

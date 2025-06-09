@@ -47,23 +47,37 @@ const Projects = () => {
             skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
         }
     ]
-  return (
-    <div>
-    <Container>
-        <h1 className="text-2xl font-bold mb-6">Proof of Work</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    // some tweaking in the side heading is required
+ return (
+  <div>
+    <Container className="md:pt-6 pt-3">
+      <div className="relative inline-block border border-secondary text-base mb-6 bg-neutral-200 dark:bg-neutral-800 text-secondary px-2 py-1">
+        Proof of Work
+        <div className="absolute -top-1 -left-1 w-1 h-1 rounded-full bg-secondary"></div>
+        <div className="absolute -top-1 -right-1 w-1 h-1 rounded-full bg-secondary"></div>
+        <div className="absolute -bottom-1 -left-1 w-1 h-1 rounded-full bg-secondary"></div>
+        <div className="absolute -bottom-1 -right-1 w-1 h-1 rounded-full bg-secondary"></div>
+      </div>
+    
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
         {projects.map((item, idx) => (
           <div key={idx} className="bg-white p-4 rounded-lg shadow-md">
-            <Image src={item.image} alt={item.title} width={300} height={200} className="mb-4 rounded-md" />
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={300}
+              height={200}
+              className="mb-4 rounded-md"
+            />
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
             <p className="text-sm text-secondary">{item.description}</p>
           </div>
         ))}
       </div>
     </Container>
-     
-    </div>
-  )
+  </div>
+);
 }
 
 export default Projects
@@ -72,7 +86,7 @@ export default Projects
 // 1. Add links to the projects (make whole card clickable) using next/link
 // 2. Add animations to the projects
 // 3. style the cards properly
-// 4. Add hover effects to the cards
+// 4. Add hover effects to the cards (show border on hover only)
 // 5. Add techstacks used (yt video)
 // 6. Add a button to view the project on GitHub
 // 7. Add a button to view the project live (if applicable) 
@@ -80,4 +94,6 @@ export default Projects
 // 9. Add blogs
 // 10. Add a contact form
 // 11. Add a footer with social links
+// 12. add git graph
+// built with love by salman najah
 
