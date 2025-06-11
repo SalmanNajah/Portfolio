@@ -13,7 +13,6 @@ const DarkModeToggle = () => {
   useEffect(() => setMounted(true), [])
 
   if (!mounted) return null // avoids mismatch on hydration
-
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
     setRotation((prev) => prev - 180)
@@ -22,7 +21,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2"
+      className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2 transition-all duration-300 ease-in-out hover:scale-105"
       aria-label="Toggle dark mode"
     >
       <motion.div
@@ -31,9 +30,9 @@ const DarkModeToggle = () => {
         className="flex items-center justify-center"
       >
         {resolvedTheme === 'dark' ? (
-          <IconSun className="w-5 h-5" />
+          <IconSun className="w-5 h-5 transition-opacity duration-200" />
         ) : (
-          <IconMoon className="w-5 h-5" />
+          <IconMoon className="w-5 h-5 transition-opacity duration-200" />
         )}
       </motion.div>
     </button>

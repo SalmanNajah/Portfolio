@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
+import Blog from "@/components/blog";
 export default function Home() {
   return (
     <div>
@@ -33,15 +34,13 @@ export default function Home() {
           <motion.p initial={{ opacity: 0, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
-            className="text-secondary pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
-            21, I build things, break stuff, and figure it out as I go.
-            Deep into web, systems, and anything that scales or sparks curiosity.
-            Obsessed with clean builds, clever tools, and ideas that stick.
-            Still learning, still building.
+            className="text-neutral-600 dark:text-neutral-200 font-normal pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
+            21, I build things, break stuff, and figure it out as I go. Deep into web, systems, and anything that scales or sparks curiosity. Obsessed with clean builds, clever tools, and ideas that stick. Still learning, still building.
           </motion.p>
         </div>
       </Container>
       <Projects />
+      <Blog />
     </div>
   );
 }

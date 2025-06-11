@@ -2,6 +2,8 @@ import React from 'react'
 import Container from './container'
 import Image from 'next/image'
 import { motion } from 'motion/react'
+import Link from 'next/link'
+import SideHeaders from './sideheaders'
 
 const Projects = () => {
   const projects = [
@@ -22,7 +24,7 @@ const Projects = () => {
     {
       title: "Real-time Chat Application",
       description: "Chat app with groups, private messaging, and authentication. Built with React and Socket.io.",
-      link: "https://github.com/yourusername/realtime-chat-app",
+      link: "https://github.com/Salman-in/skill-swap",
       image: "/image1.png",
       skills: ["React", "Node.js", "Socket.io", "Express", "MongoDB"]
     },
@@ -49,30 +51,28 @@ const Projects = () => {
     }
   ]
 
-  // some tweaking in the side heading is required, the motion divs below needs some changes to make it look better like dragging 
   return (
     <div>
-      <Container className="md:pt-6 pt-3">
-        <div className="relative inline-block text-base mb-6 bg-neutral-200 dark:bg-neutral-800 text-secondary px-2 py-1">
+      <Container className="md:pt-6 pt-3 border-b border-neutral-300 dark:border-neutral-700 md:pb-18 pb-6">
+        <SideHeaders>
           Proof of Work
-          <div className="absolute -top-0.5 -left-0.5 w-1 h-1 rounded-full bg-neutral-400" />
-          <div className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-neutral-400" />
-          <div className="absolute -bottom-0.5 -left-0.5 w-1 h-1 rounded-full bg-neutral-400" />
-          <div className="absolute -bottom-0.5 -right-0.5 w-1 h-1 rounded-full bg-neutral-400" />
-        </div>
+        </SideHeaders>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
           {projects.map((item, idx) => (
-            <div key={idx} className="bg-white p-4 rounded-lg shadow-md">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={300}
-                height={200}
-                className="mb-4 rounded-md"
-              />
+            <div key={idx} className="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+              <Link href={item.link}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={350}
+                  height={200}
+                  className="mb-4 rounded-md flex justify-self-center"
+                />
+              </Link>
+
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-              <p className="text-sm text-secondary ">{item.description}</p>
+              <p className="text-sm text-secondary">{item.description}</p>
             </div>
           ))}
         </div>
@@ -84,18 +84,18 @@ const Projects = () => {
 export default Projects
 
 //TODO
-// 1. Add links to the projects (make whole card clickable) using next/link
-// 2. Add animations to the projects
-// 3. style the cards properly  - justified to center DONE
-// 4. Add hover effects to the cards (show border on hover only)
 // 5. Add techstacks used (yt video)
-// 6. Add a button to view the project on GitHub
-// 7. Add a button to view the project live (if applicable)
-// 8. Add dark mode support - added button DONE
 // 9. Add blogs
 // 10. Add a contact form
 // 11. Add a footer with social links
 // 12. add git graph
-// 13. Made mobile responsive - DONE
+// 14. global.css not working properly
 // built with love by salman najah
 
+// DONE
+// 1. Add links to the projects (make whole card clickable) using next/link - DONE
+// 2. Add animations to the projects - DONE
+// 3. style the cards properly  - justified to center DONE
+// 4. Add hover effects to the cards (show border on hover only) - DONE
+// 8. Add dark mode support - DONE
+// 13. Made mobile responsive - DONE
