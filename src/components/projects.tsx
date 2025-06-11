@@ -3,20 +3,23 @@ import Container from './container'
 import Image from 'next/image'
 import Link from 'next/link'
 import SideHeaders from './sideheaders'
+//Imp TODO:
+//Change the layout in landing to only 3 and more in projects page
+// also adjust the spacing of the text description and image properly
 
 const Projects = () => {
   const projects = [
     {
-      title: "Portfolio Website v2",
-      description: "Modern portfolio with blog, dark mode, and animations. Built using Next.js and Tailwind.",
-      link: "https://github.com/yourusername/portfolio-v2",
+      title: "Portfolio Website Template",
+      description: "Modern portfolio template built using HTML, CSS and JS.",
+      link: "https://github.com/Salman-in/portfolio-v1",
       image: "/image2.png",
-      skills: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"]
+      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "GitHub Pages"]
     },
     {
-      title: "E-commerce Storefront",
-      description: "Scalable e-commerce site with Stripe payments and CMS. Mobile-first and SEO optimized.",
-      link: "https://github.com/yourusername/ecommerce-storefront",
+      title: "BrainSpace",
+      description: "A place to store all your brain dumps. A modern, responsive web app for managing notes and ideas.",
+      link: "https://github.com/Salman-in/brainspace",
       image: "/image3.png",
       skills: ["React", "Next.js", "Stripe", "Sanity.io", "Redux Toolkit"]
     },
