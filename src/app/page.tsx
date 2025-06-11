@@ -7,7 +7,7 @@ import Projects from "@/components/projects";
 export default function Home() {
   return (
     <div>
-      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b border-neutral-200 dark:border-neutral-800 ">
+      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b border-neutral-200 dark:border-neutral-700 ">
         <motion.div
           className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
           initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -26,7 +26,7 @@ export default function Home() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-primary tracking-tight flex justify-self-start md:justify-self-start">
+            className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight flex justify-self-start md:justify-self-start">
             Salman Najah
           </motion.h1>
 

@@ -51,18 +51,18 @@ const Projects = () => {
     // some tweaking in the side heading is required
  return (
   <div>
-    <Container className="md:pt-24 pt-24 min-h-screen">
-      <div className="relative inline-block text-base mb-6 bg-neutral-200 dark:bg-neutral-800 text-secondary px-2 py-1">
+    <Container className="md:pt-24 pt-24 min-h-[200vh]">
+      <div className="relative inline-block text-base mb-6 bg-neutral-200 dark:bg-neutral-400 text-neutral-600 dark:text-neutral-900  px-2 py-1">
         Proof of Work - detailed
-        <div className="absolute -top-0.5 -left-0.5 w-1 h-1 rounded-full bg-secondary"></div>
-        <div className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-secondary"></div>
-        <div className="absolute -bottom-0.5 -left-0.5 w-1 h-1 rounded-full bg-secondary"></div>
-        <div className="absolute -bottom-0.5 -right-0.5 w-1 h-1 rounded-full bg-secondary"></div>
+        <div className="absolute -top-0.5 -left-0.5 w-1 h-1 rounded-full bg-neutral-400" />
+          <div className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-neutral-400" />
+          <div className="absolute -bottom-0.5 -left-0.5 w-1 h-1 rounded-full bg-neutral-400" />
+          <div className="absolute -bottom-0.5 -right-0.5 w-1 h-1 rounded-full bg-neutral-400" />
       </div>
     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
         {projects.map((item, idx) => (
-          <div key={idx} className="bg-white p-4 rounded-lg shadow-md">
+          <div key={idx} className="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-md">
             <Image
               src={item.image}
               alt={item.title}
