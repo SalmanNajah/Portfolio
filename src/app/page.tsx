@@ -39,7 +39,6 @@ export default function Home() {
             Obsessed with clean builds, clever tools, and ideas that stick.
             Still learning, still building.
           </motion.p>
-
         </div>
       </Container>
       <Projects />

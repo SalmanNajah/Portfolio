@@ -51,9 +51,9 @@ const Projects = () => {
     // some tweaking in the side heading is required
  return (
   <div>
-    <Container className="md:pt-24 pt-3 min-h-[200vh]">
+    <Container className="md:pt-24 pt-24 min-h-screen">
       <div className="relative inline-block text-base mb-6 bg-neutral-200 dark:bg-neutral-800 text-secondary px-2 py-1">
-        Proof of Work - coming soooooon
+        Proof of Work - detailed
         <div className="absolute -top-0.5 -left-0.5 w-1 h-1 rounded-full bg-secondary"></div>
         <div className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-secondary"></div>
         <div className="absolute -bottom-0.5 -left-0.5 w-1 h-1 rounded-full bg-secondary"></div>
@@ -66,9 +66,9 @@ const Projects = () => {
             <Image
               src={item.image}
               alt={item.title}
-              width={300}
+              width={350}
               height={200}
-              className="mb-4 rounded-md"
+              className="mb-4 rounded-md flex justify-self-center"
             />
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
             <p className="text-sm text-secondary">{item.description}</p>
