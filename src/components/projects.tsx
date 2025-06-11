@@ -94,15 +94,16 @@ export default Projects
 //TODO
 // 1. Add links to the projects (make whole card clickable) using next/link
 // 2. Add animations to the projects
-// 3. style the cards properly
+// 3. style the cards properly  - justified to center DONE
 // 4. Add hover effects to the cards (show border on hover only)
 // 5. Add techstacks used (yt video)
 // 6. Add a button to view the project on GitHub
 // 7. Add a button to view the project live (if applicable)
-// 8. Add dark mode support
+// 8. Add dark mode support - added button DONE
 // 9. Add blogs
 // 10. Add a contact form
 // 11. Add a footer with social links
 // 12. add git graph
+// 13. Made mobile responsive - DONE
 // built with love by salman najah
 
