@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
-
 export default function Home() {
   return (
     <div>
