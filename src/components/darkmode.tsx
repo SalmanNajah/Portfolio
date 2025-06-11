@@ -12,7 +12,7 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="text-black dark:text-white cursor-pointer rounded-xl shadow-standard p-2">
+    <button onClick={toggleTheme} className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2">
       <motion.div
         animate={{ rotate: rotation }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
