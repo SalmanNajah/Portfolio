@@ -12,10 +12,10 @@ const DarkModeToggle = () => {
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null // avoids mismatch on hydration
+  if (!mounted) return null 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-    setRotation((prev) => prev - 180)
+    setRotation((prev) => (prev % 360 === 0 ? 180 : 0))
   }
 
   return (
