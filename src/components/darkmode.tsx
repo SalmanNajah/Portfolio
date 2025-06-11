@@ -6,7 +6,7 @@ import { motion } from 'motion/react'
 import { useTheme } from 'next-themes'
 
 const DarkModeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [rotation, setRotation] = useState(0)
 

@@ -45,7 +45,7 @@ const Navbar = () => {
             }}
           >
             <DarkModeToggle />
-            <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Hamburger setIsOpen={setIsOpen} />
           </motion.div>
         )}
       </Container>

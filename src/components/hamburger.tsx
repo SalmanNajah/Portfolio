@@ -1,8 +1,6 @@
-import { IconMenu, IconMenu2, IconMenu3 } from '@tabler/icons-react'
-import React, { useState } from 'react'
-import MobileNavbar from './navbar/mobile'
+import { IconMenu3 } from '@tabler/icons-react'
 
-const Hamburger = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
+const Hamburger = ({setIsOpen}: { setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
     <div>
       <button className="md:hidden flex items-center justify-center" onClick={() => setIsOpen(prev => !prev)}>
