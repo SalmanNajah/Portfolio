@@ -1,8 +1,10 @@
+"use client"
 import Container from '@/components/container'
 import SideHeaders from '@/components/sideheaders';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import { motion } from 'motion/react';
 
 const Projects = () => {
   const projects = [
@@ -60,22 +62,26 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {projects.map((item, idx) => (
-            <div key={idx} className="bg-white dark:bg-[#1b1b1b] p-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+            <motion.div key={idx} className="bg-white dark:bg-[#1b1b1b] p-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+              initial={{ opacity: 0, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.3 * (idx + 1) }}
+            >
               <Link href={item.link}>
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={350}
-                height={200}
-                className="mb-4 rounded-md flex justify-self-center mx-auto mt-4"
-              />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={350}
+                  height={200}
+                  className="mb-4 rounded-md flex justify-self-center mx-auto mt-4"
+                />
               </Link>
               <div className='mx-auto px-4 pb-6'>
-              <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-              <p className="text-sm text-secondary">{item.description}</p>
+                <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                <p className="text-sm text-secondary">{item.description}</p>
               </div>
-              
-            </div>
+
+            </motion.div>
           ))}
         </div>
       </Container>
