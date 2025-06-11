@@ -1,6 +1,7 @@
 import Container from '@/components/container'
 import SideHeaders from '@/components/sideheaders';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 const Projects = () => {
@@ -9,7 +10,7 @@ const Projects = () => {
       title: "Portfolio Website v2",
       description: "Modern portfolio with blog, dark mode, and animations. Built using Next.js and Tailwind.",
       link: "https://github.com/yourusername/portfolio-v2",
-      image: "/image1.png",
+      image: "/image6.png",
       skills: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"]
     },
     {
@@ -30,14 +31,14 @@ const Projects = () => {
       title: "Task Manager App",
       description: "Organize tasks, set deadlines, and track progress. Responsive and user-friendly interface.",
       link: "https://github.com/yourusername/task-manager-app",
-      image: "/image3.png",
+      image: "/image4.png",
       skills: ["React", "Redux", "TypeScript", "Firebase"]
     },
     {
       title: "Weather Dashboard",
       description: "Weather dashboard with real-time data, forecasts, and location search. Built with APIs.",
       link: "https://github.com/yourusername/weather-dashboard",
-      image: "/image1.png",
+      image: "/image5.png",
       skills: ["React", "OpenWeatherMap API", "Tailwind CSS"]
     },
     {
@@ -57,18 +58,23 @@ const Projects = () => {
           Proof of Work - detailed
         </SideHeaders>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {projects.map((item, idx) => (
-            <div key={idx} className="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-md">
+            <div key={idx} className="bg-white dark:bg-[#1b1b1b] p-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+              <Link href={item.link}>
               <Image
                 src={item.image}
                 alt={item.title}
                 width={350}
                 height={200}
-                className="mb-4 rounded-md flex justify-self-center"
+                className="mb-4 rounded-md flex justify-self-center mx-auto mt-4"
               />
+              </Link>
+              <div className='mx-auto px-4 pb-6'>
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
               <p className="text-sm text-secondary">{item.description}</p>
+              </div>
+              
             </div>
           ))}
         </div>

@@ -27,14 +27,14 @@ export default function Home() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight flex justify-self-start md:justify-self-start">
+            className="text-3xl md:text-5xl font-bold text-primary dark:text-white tracking-tight flex justify-self-start md:justify-self-start">
             Salman Najah
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
-            className="text-neutral-600 dark:text-neutral-200 font-normal pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
+            className="text-neutral-500 dark:text-neutral-400 font-light pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
             21, I build things, break stuff, and figure it out as I go. Deep into web, systems, and anything that scales or sparks curiosity. Obsessed with clean builds, clever tools, and ideas that stick. Still learning, still building.
           </motion.p>
         </div>
