@@ -44,3 +44,10 @@ export default function Home() {
     </div>
   );
 }
+
+
+// TODO
+// 1. complete the basic skeleton by video reference
+// 2. then add that git graph
+// 3. then styling on my own
+// 4. fix the dark mode toggle buttonppp

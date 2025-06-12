@@ -63,7 +63,7 @@ const ProjectComponent = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {projects.map((item, idx) => (
-            <motion.div key={idx} className="bg-white dark:bg-[#1b1b1b] p-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            <motion.div key={idx} className="bg-white dark:bg-[#1b1b1b] p-2 rounded-lg shadow-md hover:scale-102 transition-transform duration-300"
               initial={{ opacity: 0, filter: "blur(6px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.3 * (idx + 1), ease: "easeInOut" }}
