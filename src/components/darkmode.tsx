@@ -15,7 +15,7 @@ const DarkModeToggle = () => {
   if (!mounted) return null 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-    setRotation((prev) => prev + (prev % 360 === 0 ? 180 : -180))
+    setRotation((prev) => prev + 90)
   }
 
   return (
