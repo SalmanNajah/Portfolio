@@ -1,0 +1,1 @@
+//put all those functions in a single file(blogs - page.tsx) and export them
