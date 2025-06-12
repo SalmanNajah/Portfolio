@@ -17,14 +17,14 @@ export default async function AllBlogsPage() {
     return (
         <div>
             <Container className="min-h-screen pt-24 pb-8 border-neutral-200 dark:border-neutral-700 ">
-                <h1 className="text-3xl md:text-5xl font-bold text-primary dark:text-white tracking-tight">
+                <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     All Blogs
                 </h1>
                 <div className="flex flex-col gap-4 mt-8">
                     {allBlogs.map((blog, idx) => (
-                        <Link key={idx} href={`/blog/${blog?.slug}`} className=" bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg font-semibold">
+                        <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg font-semibold">
                             <div className="flex justify-between items-center">
-                            <span className="font-medium">{blog?.title}</span>  
+                            <span className="font-medium ">{blog?.title}</span>  
                                 <span className="text-sm text-neutral-500 dark:text-neutral-400">{blog?.readTime}</span>
                             </div>
                         </Link>

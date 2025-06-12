@@ -56,9 +56,9 @@ const Projects = () => {
   return (
     <div>
       <Container className="md:pt-24 pt-24 min-h-[200vh]">
-        <SideHeaders>
-          Proof of Work - detailed
-        </SideHeaders>
+        <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
+          Projects
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {projects.map((item, idx) => (
