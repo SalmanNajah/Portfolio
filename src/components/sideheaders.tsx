@@ -19,6 +19,4 @@ const SideHeaders = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-
-
 export default SideHeaders
