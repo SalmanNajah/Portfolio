@@ -8,7 +8,7 @@ import { useTheme } from 'next-themes'
 const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [rotation, setRotation] = useState(0)
+  const [rotation, setRotation] = useState(240)
 
   useEffect(() => setMounted(true), [])
 
