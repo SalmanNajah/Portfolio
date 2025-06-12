@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 const SideHeaders = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
-      className="relative inline-block text-base mb-6 bg-neutral-200/70 dark:bg-neutral-700/30 text-neutral-600 dark:text-neutral-300 font-medium py-0.5 px-1"
+      className="relative inline-block text-base m-2 bg-neutral-200/70 dark:bg-neutral-700/30 text-neutral-600 dark:text-neutral-300 font-medium py-0.5 px-1"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.9, ease: 'easeInOut', delay: 0.5 }}
