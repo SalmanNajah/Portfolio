@@ -1,6 +1,3 @@
-//put all those functions in a single file(blogs - page.tsx) and export them
-// which will solve the build error
-
 import path from "path"
 import fs from "fs"
 import { compileMDX } from "next-mdx-remote/rsc"
