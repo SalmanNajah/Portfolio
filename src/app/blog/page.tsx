@@ -22,7 +22,7 @@ export default async function AllBlogsPage() {
                     {allBlogs.map((blog, idx) => (
                         <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg font-semibold hover:shadow-standard hover:scale-101 transition-all duration-100 ease-in-out">
                             <div className="flex justify-between items-center">
-                            <span className="font-medium">{blog?.title}</span>  
+                                <span className="font-medium">{blog?.title}</span>  
                                 <span className="text-sm text-neutral-500 dark:text-neutral-400">{blog?.readTime}</span>
                             </div>
                         </Link>
