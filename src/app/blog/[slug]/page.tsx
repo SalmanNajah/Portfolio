@@ -18,13 +18,13 @@ type BlogFrontMatter = {
 }
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export default async function SingleBlogPage({ params }: PageProps) {
-    const { slug } = params;
+    const { slug } = await params;
     const singleBlogData = await fetchSingleBlog(slug);
 
     if (!singleBlogData) {
