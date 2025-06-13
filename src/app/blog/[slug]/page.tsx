@@ -65,7 +65,7 @@ const getBlogFrontMatterBySlug = async ( slug: string ) => {
 
 
 
-export async function SingleBlogPage({ params }: { params: { slug: string } }) {
+export default async function SingleBlogPage({ params }: { params: { slug: string } }) {
     const { slug } = await params;
     const singleBlogData = fetchSingleBlog(slug);
 
