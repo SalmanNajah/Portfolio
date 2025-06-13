@@ -18,8 +18,8 @@ type BlogFrontMatter = {
 }
 
 export default async function SingleBlogPage({ params }: { params: { slug: string } }) {
-    const { slug } = await params;
-    const singleBlogData = fetchSingleBlog(slug);
+    const { slug } = params;
+    const singleBlogData = await fetchSingleBlog(slug);
 
     if (!singleBlogData) {
         redirect('/blog'); // Redirect to the blog index page if the blog post is not found

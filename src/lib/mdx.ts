@@ -34,7 +34,7 @@ export const fetchAllBlogs = async () => {
         }
     }))
 
-    return allBlogsbyFrontMatter
+    return allBlogsbyFrontMatter;
 }
 
 //Getting only the frontmatter of the blog based on slug
