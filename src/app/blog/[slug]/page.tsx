@@ -1,9 +1,8 @@
 import Container from '@/components/container'
 import React from 'react'
-import fs from 'fs'
-import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { redirect } from 'next/navigation'
+import { fetchSingleBlog } from '@/lib/mdx'
 
 export const metadata = {
     title: 'Blog | Salman Najah',
@@ -15,55 +14,8 @@ type BlogFrontMatter = {
     title: string
     date: string
     readTime: string
-    slug?: string // Added slug to the frontmatter type for consistency
+    slug?: string
 }
-
-// Ideally this should have been placed in a separate utility file, but for simplicity, it's included here.(Fetches single blog based on slug)
-const fetchSingleBlog = (slug: string) => {
-    const filePath = path.join(process.cwd(), 'src', 'data', `${slug}.mdx`)
-    if (!fs.existsSync(filePath)) return null
-    return fs.readFileSync(filePath, 'utf-8')
-}
-
-//Fetching all the  blog details
-export const fetchAllBlogs = async () => {
-    const blogDir = fs.readdirSync(path.join(process.cwd(), 'src/data'))
-
-    const allBlogsbyFrontMatter = await Promise.all(blogDir.map(async (fileName) => {
-        const slug = fileName.replace('.mdx', '')
-        const FM = await getBlogFrontMatterBySlug(slug);
-
-        return {
-            slug,
-            ...FM
-        }
-    }))
-
-    return allBlogsbyFrontMatter
-}
-
-//Getting only the frontmatter of the blog based on slug
-const getBlogFrontMatterBySlug = async ( slug: string ) => {
-    const singleBlogData = fs.readFileSync(
-        path.join(process.cwd(), 'src', 'data', `${slug}.mdx`),
-        'utf-8'
-    );
-
-    if (!singleBlogData) {
-        return null; 
-    }
-
-    // Using the below code we get the content and frontmatter of a blog separately
-    const { frontmatter } = await compileMDX<BlogFrontMatter>({
-        source: singleBlogData,
-        options: { parseFrontmatter: true },
-    })
-
-     return frontmatter;
-}
-
-
-
 
 export default async function SingleBlogPage({ params }: { params: { slug: string } }) {
     const { slug } = await params;
@@ -74,7 +26,7 @@ export default async function SingleBlogPage({ params }: { params: { slug: strin
     }
 
     // Using the below code we get the content and frontmatter of a blog separately
-    const { content, frontmatter } = await compileMDX<{ title: string, date: string, readTime: string }>({
+    const { content, frontmatter } = await compileMDX<BlogFrontMatter>({
         source: singleBlogData,
         options: { parseFrontmatter: true },
     })
