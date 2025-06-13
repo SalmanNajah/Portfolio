@@ -1,6 +1,5 @@
 "use client"
 import Container from '@/components/container'
-import SideHeaders from '@/components/sideheaders';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'

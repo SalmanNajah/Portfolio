@@ -1,8 +1,8 @@
 import Container from '@/components/container'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import fs from 'fs'
 import path from 'path'
-import { compileMDX, MDXRemote } from 'next-mdx-remote/rsc'
+import { compileMDX } from 'next-mdx-remote/rsc'
 import { redirect } from 'next/navigation'
 
 export const metadata = {
