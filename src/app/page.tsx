@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
 import Blog from "@/components/blog";
+import GithubGraph from "@/components/ui/github";
 export default function Home() {
   return (
     <div>
@@ -31,7 +32,7 @@ export default function Home() {
             Salman Najah
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, filter: "blur(8px)",y : 20 }}
+          <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-neutral-500 dark:text-neutral-400 font-light pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
@@ -41,6 +42,9 @@ export default function Home() {
       </Container>
       <Projects />
       <Blog />
+      <GithubGraph
+        blockMargin={2}
+      />
     </div>
   );
 }
