@@ -1,0 +1,20 @@
+import Container from "@/components/container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Salman Najah | Contact",
+    description: "Learn more about Salman Najah.",
+};
+
+export default async function ContactPage() {
+    return (
+        <div>
+            <Container className="min-h-[120vh] pt-24 pb-8 border-neutral-200 dark:border-neutral-700 ">
+                <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
+                    Contact Me
+                </h1>
+                <p className="text-neutral-500">Coming soooon</p>
+            </Container>
+        </div>
+    );
+}
