@@ -102,21 +102,21 @@ const GithubGraph = ({ blockMargin, colorPallete }: GithubGraphProps) => {
                 className="flex justify-center"
             >
                 <ActivityCalendar
-  data={contributions}
-  loading={loading}
-  maxLevel={4} // must match data range
-  blockMargin={blockMargin ?? 2.5}
-  theme={{
-  dark: [
-    "#a0a0a0",
-    "#808080", 
-    "#404040",
-    "#1a1a1a",
-    "#000000",
-  ],
-}}
+                    data={contributions}
+                    loading={loading}
+                    maxLevel={4} // must match data range
+                    blockMargin={blockMargin ?? 2.5}
+                    theme={{
+                        dark: [
+                            "#a0a0a0",
+                            "#808080",
+                            "#404040",
+                            "#1a1a1a",
+                            "#000000",
+                        ],
+                    }}
 
-/>
+                />
 
 
             </Link>
