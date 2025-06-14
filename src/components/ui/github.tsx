@@ -6,6 +6,7 @@ import Container from "../container";
 import SideHeaders from "../sideheaders";
 import Link from "next/link";
 
+// Replace this mockData with data fetching using useCallback etc
 const mockData: Activity[] = [
     { date: "2024-06-14", count: 0, level: 0 },
     { date: "2024-06-15", count: 0, level: 0 },
