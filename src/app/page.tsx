@@ -42,9 +42,7 @@ export default function Home() {
       </Container>
       <Projects />
       <Blog />
-      <GithubGraph
-        blockMargin={2}
-      />
+      <GithubGraph />
     </div>
   );
 }
