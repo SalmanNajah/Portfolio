@@ -1,6 +1,4 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import { Activity, ActivityCalendar } from "react-activity-calendar";
 import Container from "../container";
 import SideHeaders from "../sideheaders";
