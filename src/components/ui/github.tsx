@@ -7,6 +7,7 @@ import SideHeaders from "../sideheaders";
 import Link from "next/link";
 
 // Replace this mockData with data fetching using useCallback etc
+// Make the same color palette look good for both light and dark modes
 const mockData: Activity[] = [
     { date: "2024-06-14", count: 0, level: 0 },
     { date: "2024-06-15", count: 0, level: 0 },
@@ -38,62 +39,9 @@ const mockData: Activity[] = [
     { date: "2024-11-27", count: 1, level: 1 },
     { date: "2024-11-28", count: 1, level: 1 },
     { date: "2025-06-14", count: 3, level: 1 },
-    {
-        "date": "2025-05-16",
-        "count": 1,
-        "level": 1
-    },
-    {
-        "date": "2025-05-17",
-        "count": 5,
-        "level": 1
-    },
-    {
-        "date": "2025-05-18",
-        "count": 4,
-        "level": 1
-    },
-    {
-        "date": "2025-05-19",
-        "count": 0,
-        "level": 0
-    },
-    {
-        "date": "2025-05-20",
-        "count": 0,
-        "level": 0
-    },
-    {
-        "date": "2025-05-21",
-        "count": 0,
-        "level": 0
-    },
-    {
-        "date": "2025-05-22",
-        "count": 2,
-        "level": 1
-    },
 ];
 
-type GithubGraphProps = {
-    blockMargin?: number;
-    colorPallete?: string[];
-};
-
-const GithubGraph = ({ blockMargin, colorPallete }: GithubGraphProps) => {
-    const [contributions, setContributions] = useState<Activity[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        // Simulate delay to mock loading state
-        const timer = setTimeout(() => {
-            setContributions(mockData);
-            setLoading(false);
-        }, 500); // 500ms fake delay
-
-        return () => clearTimeout(timer);
-    }, []);
-
+const GithubGraph = () => {
     return (
         <Container>
             <SideHeaders>GitHub Contributions</SideHeaders>
@@ -103,10 +51,10 @@ const GithubGraph = ({ blockMargin, colorPallete }: GithubGraphProps) => {
                 className="flex justify-center"
             >
                 <ActivityCalendar
-                    data={contributions}
-                    loading={loading}
+                    data={mockData}
+                    loading={false}
                     maxLevel={4} // must match data range
-                    blockMargin={blockMargin ?? 2.5}
+                    blockMargin={2.5}
                     theme={{
                         dark: [
                             "#a0a0a0",
@@ -118,8 +66,6 @@ const GithubGraph = ({ blockMargin, colorPallete }: GithubGraphProps) => {
                     }}
 
                 />
-
-
             </Link>
         </Container>
     );
