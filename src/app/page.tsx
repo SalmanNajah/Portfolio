@@ -44,7 +44,10 @@ export default function Home() {
       {/* <Blog /> */}
       <GithubGraph username="Salman-in"
         blockMargin={2}
-        colorPallete={["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"]} />
+        // colorPallete={["#000000", "#2c2c2c", "#595959", "#a6a6a6", "#e0e0e0"]} looks good in dark mode
+        // colorPallete={["#ffffff", "#d9d9d9", "#b3b3b3", "#808080", "#404040"]} //looks good in light mode
+
+ />
     </div>
   );
 }
