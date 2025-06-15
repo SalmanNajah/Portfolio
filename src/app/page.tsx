@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
-import Blog from "@/components/blog";
+// import Blog from "@/components/blog";
 import { GithubGraph } from "@/components/ui/github";
 export default function Home() {
   return (
