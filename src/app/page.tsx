@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
 import Blog from "@/components/blog";
-import GithubGraph from "@/components/ui/github";
+import { GithubGraph } from "@/components/ui/github";
 export default function Home() {
   return (
     <div>
@@ -41,8 +41,10 @@ export default function Home() {
         </div>
       </Container>
       <Projects />
-      <Blog />
-      <GithubGraph />
+      {/* <Blog /> */}
+      <GithubGraph username="Salman-in"
+        blockMargin={2}
+        colorPallete={["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"]} />
     </div>
   );
 }
