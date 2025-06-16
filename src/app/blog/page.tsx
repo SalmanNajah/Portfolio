@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     description: "A blog by Salman Najah.",
 };
 
+export const dynamic = 'error';
+
 export default async function AllBlogsPage() {
     const allBlogs = await fetchAllBlogs();
     console.log("All Blogs:", allBlogs);  
