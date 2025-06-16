@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
+import { ViewTransitions } from 'next-view-transitions'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ViewTransitions>
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased bg-neutral-100 dark:bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -29,5 +31,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </ViewTransitions>
   );
 }
