@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import Resume from "@/components/resume";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +14,12 @@ export default async function AboutPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     About Me
                 </h1>
-                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">
-                    I am a passionate web developer with a love for creating dynamic and user-friendly web applications. My journey in tech has been fueled by curiosity and a desire to learn. I enjoy tackling challenges and finding innovative solutions to problems.
-                </p>
+                <div className="md:justify-between mt-6 md:flex ">
+                    <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base max-w-xl pb-4">
+                        I am a passionate web developer with a love for creating dynamic and user-friendly web applications. My journey in tech has been fueled by curiosity and a desire to learn. I enjoy tackling challenges and finding innovative solutions to problems.
+                    </p>
+                    <Resume />
+                </div>
 
                 <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">
                     Timeline coming soon

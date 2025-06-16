@@ -6,7 +6,8 @@ const navItems = [
   { title: 'About', href: '/about' },
   { title: 'Projects', href: '/projects' },
   { title: 'Blog', href: '/blog' },
-  { title: 'Contact', href: '/contact' },
+  { title: 'Resources', href: '/resources' },
+  { title: 'Contact', href: '/contact' }
 ];
 
 const MobileNavbar = ({ setIsOpen }: { setIsOpen?: (v: boolean) => void }) => (
