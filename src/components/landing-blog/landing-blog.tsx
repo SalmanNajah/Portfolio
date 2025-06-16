@@ -4,13 +4,8 @@ import SideHeaders from '../sideheaders'
 import { fetchAllBlogs } from '@/lib/mdx';
 import { Link } from 'next-view-transitions';
 
-type Blog = {
-  slug: string;
-  title: string;
-  readTime: string;
-};
-
-const LandingBlogs = async ({ allBlogs } : { allBlogs: Blog[] }) => {
+const LandingBlogs = async () => {
+  const allBlogs = await fetchAllBlogs();
   return (
     <div>
       <Container className='min-h-[200px] md:pb-18 pb-6 md:pt-6 pt-3'>
