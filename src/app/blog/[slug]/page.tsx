@@ -2,12 +2,28 @@ import Container from '@/components/container'
 import React from 'react'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
-import { fetchAllBlogs, fetchSingleBlog } from '@/lib/mdx'
+import { fetchAllBlogs, fetchSingleBlog, getBlogFrontMatterBySlug } from '@/lib/mdx'
 
-export const metadata = {
-    title: 'Blog | Salman Najah',
-    description: 'Explore my writings on web development, technology, and more.',
-    keywords: 'blog, writings, web development, technology, Salman Najah',
+// export const metadata = {
+//     title: 'Blog | Salman Najah',
+//     description: 'Explore my writings on web development, technology, and more.',
+//     keywords: 'blog, writings, web development, technology, Salman Najah',
+// }
+
+// Dynamically generating metadata for each blog post based on its frontmatter
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+    const frontmatter = await getBlogFrontMatterBySlug(params.slug);
+
+    if (!frontmatter) {
+        notFound();
+    }
+
+    return {
+        title: frontmatter?.title + ' | Salman Najah',
+        description: frontmatter?.description || 'Read my latest blog posts on web development and technology.',
+        keywords: frontmatter?.keywords || 'blog, web development, technology, Salman Najah',
+    };
 }
 
 type BlogFrontMatter = {

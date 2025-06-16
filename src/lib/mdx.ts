@@ -5,6 +5,8 @@ import { compileMDX } from "next-mdx-remote/rsc"
 
 type BlogFrontMatter = {
     title: string
+    description?: string
+    keywords?: string
     date: string
     readTime: string
 }
@@ -34,7 +36,7 @@ export const fetchAllBlogs = async () => {
 }
 
 //Getting only the frontmatter of the blog based on slug
-const getBlogFrontMatterBySlug = async ( slug: string ) => {
+export const getBlogFrontMatterBySlug = async ( slug: string ) => {
     const singleBlogData = fs.readFileSync(
         path.join(process.cwd(), 'src', 'data', `${slug}.mdx`),
         'utf-8'
