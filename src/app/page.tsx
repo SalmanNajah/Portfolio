@@ -4,19 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
-// import Blog from "@/components/blog";
-// import  GithubGraph  from "@/components/ui/github";
+import Blog from "@/components/blog";
 import dynamic from "next/dynamic";
 
 const GithubGraph = dynamic(() => import("@/components/ui/github"), {
   ssr: false,
 });
 // SSR is disabled for this component because of the hydration issue with the ActivityCalendar component.
+// SSR Enabled solution is there in Urgent Bookmark(chrome) - implement that later if needed(By creating a server component for the graph and passing the data as props to the client component).
 
 export default function Home() {
   return (
     <div>
-      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b border-neutral-200 dark:border-neutral-700 ">
+      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-neutral-200 dark:border-neutral-700">
         <motion.div
           className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
           initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
@@ -48,10 +48,8 @@ export default function Home() {
         </div>
       </Container>
       <Projects />
-      {/* <Blog /> */}
-      <GithubGraph username="Salman-in"
-        blockMargin={2}
-      />
+      <GithubGraph username="Salman-in" blockMargin={2} />
+      <Blog />
     </div>
   );
 }

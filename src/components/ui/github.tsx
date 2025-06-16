@@ -44,7 +44,7 @@ const GithubGraph = ({
 
     return (
         <div>
-            <Container className="md:pb-18 pb-6 md:pt-6 pt-3">
+            <Container className="md:pb-18 pb-6 md:pt-6 pt-3 border-b-1 border-neutral-200 dark:border-neutral-700">
                 <SideHeaders>GitHub Contributions</SideHeaders>
 
                 <Link href={"https://github.com/Salman-in"} target="_blank" className="flex justify-center pt-8">
@@ -82,5 +82,5 @@ async function fetchContributionData(username: string): Promise<Activity[]> {
     return responseBody.data;
 }
 
-
-//Hydrattion error caused by the useTheme hook
+// SSR is disabled for this component because of the hydration issue with the ActivityCalendar component.
+// SSR Enabled solution is there in Urgent Bookmark(chrome) - implement that later if needed(By creating a server component for the graph and passing the data as props to the client component).

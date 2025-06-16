@@ -13,11 +13,11 @@ export default async function AboutPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     About Me
                 </h1>
-                <p className="mt-4 text-neutral-500 dark:text-neutral-400">
+                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">
                     I am a passionate web developer with a love for creating dynamic and user-friendly web applications. My journey in tech has been fueled by curiosity and a desire to learn. I enjoy tackling challenges and finding innovative solutions to problems.
                 </p>
 
-                <p className="mt-4 text-neutral-500 dark:text-neutral-400">
+                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">
                     Timeline coming soon
                 </p>
             </Container>
