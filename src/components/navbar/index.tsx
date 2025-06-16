@@ -36,12 +36,13 @@ const Navbar = () => {
       <Container>
         {!isOpen && (
           <motion.div
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 md:hidden flex justify-between items-center px-4 backdrop-blur-md bg-white/30 dark:bg-neutral-800/30 p-3 rounded-2xl"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 md:hidden flex justify-between items-center px-4 backdrop-blur-md bg-white/10 dark:bg-neutral-900/10 p-3 rounded-2xl"
             initial={{ boxShadow: "none", width: "100%", y: 0 }}
             animate={{
               boxShadow: scrolled ? "var(--shadow-derek)" : "none",
               width: scrolled ? "90%" : "100%",
               y: scrolled ? 5 : 0,
+              backgroundColor: scrolled ? "bg-white/10 dark:bg-neutral-900/10" : "transparent",
             }}
           >
             <DarkModeToggle />
