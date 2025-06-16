@@ -87,7 +87,7 @@ const Navbar = () => {
       )}
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-white dark:bg-zinc-900 flex flex-col items-center justify-center gap-6 transition-all duration-300">
+        <div className="fixed inset-0 z-50 bg-white/80 backdrop-blur-md dark:bg-zinc-900/80 flex flex-col items-center justify-center gap-6 transition-all duration-300">
           <button onClick={() => setIsOpen(false)} className="absolute top-8 right-6">
             <IconX className="w-6 h-6 text-black dark:text-white" />
           </button>
