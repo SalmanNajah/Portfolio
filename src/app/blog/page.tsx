@@ -20,7 +20,7 @@ export default async function AllBlogsPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     All Blogs
                 </h1>
-                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base max-w-2xl pb-4">I've been programming for almost two years. Over the past year, I explored different technologies and built real-world projects. This blog is where I share what I’ve learned and the challenges I’ve faced along the way.</p>
+                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base max-w-2xl pb-4">I&#39;ve been programming for almost two years. Over the past year, I explored different technologies and built real-world projects. This blog is where I share what I&#39;ve learned and the challenges I&#39;ve faced along the way.</p>
                 <div className="flex flex-col gap-4 mt-8">
                     {allBlogs.map((blog, idx) => (
                         <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg hover:shadow-standard hover:scale-101 transition-all duration-100 ease-in-out border-1 border-neutral-200 dark:border-neutral-700">
