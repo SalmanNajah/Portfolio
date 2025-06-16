@@ -5,7 +5,14 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/projects";
 // import Blog from "@/components/blog";
-import { GithubGraph } from "@/components/ui/github";
+// import  GithubGraph  from "@/components/ui/github";
+import dynamic from "next/dynamic";
+
+const GithubGraph = dynamic(() => import("@/components/ui/github"), {
+  ssr: false,
+});
+// SSR is disabled for this component because of the hydration issue with the ActivityCalendar component.
+
 export default function Home() {
   return (
     <div>
@@ -44,14 +51,14 @@ export default function Home() {
       {/* <Blog /> */}
       <GithubGraph username="Salman-in"
         blockMargin={2}
-        // colorPallete={["#000000", "#2c2c2c", "#595959", "#a6a6a6", "#e0e0e0"]} looks good in dark mode
-        // colorPallete={["#ffffff", "#d9d9d9", "#b3b3b3", "#808080", "#404040"]} //looks good in light mode
-
- />
+      />
     </div>
   );
 }
 
+//For github graph color pallete
+// colorPallete={["#000000", "#2c2c2c", "#595959", "#a6a6a6", "#e0e0e0"]} looks good in dark mode
+// colorPallete={["#ffffff", "#d9d9d9", "#b3b3b3", "#808080", "#404040"]} //looks good in light mode
 
 // TODO
 // 1. complete the basic skeleton by video reference

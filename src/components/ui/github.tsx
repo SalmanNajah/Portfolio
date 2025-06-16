@@ -13,10 +13,9 @@ type GithubGraphProps = {
     colorPallete?: string[];
 };
 
-export const GithubGraph = ({
+const GithubGraph = ({
     username,
     blockMargin,
-    colorPallete,
 }: GithubGraphProps) => {
     const [contribution, setContribution] = useState<Activity[]>([]);
     const [loading, setIsLoading] = useState<boolean>(true);
@@ -71,6 +70,8 @@ export const GithubGraph = ({
     );
 };
 
+export default GithubGraph;
+
 async function fetchContributionData(username: string): Promise<Activity[]> {
     const response = await fetch(`https://github.vineet.pro/api/${username}`);
     const responseBody = await response.json();
@@ -80,3 +81,6 @@ async function fetchContributionData(username: string): Promise<Activity[]> {
     }
     return responseBody.data;
 }
+
+
+//Hydrattion error caused by the useTheme hook
