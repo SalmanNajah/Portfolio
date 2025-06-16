@@ -1,8 +1,8 @@
 import Container from '@/components/container'
 import React from 'react'
 import { compileMDX } from 'next-mdx-remote/rsc'
-import { redirect } from 'next/navigation'
-import { fetchSingleBlog } from '@/lib/mdx'
+import { notFound } from 'next/navigation'
+import { fetchAllBlogs, fetchSingleBlog } from '@/lib/mdx'
 
 export const metadata = {
     title: 'Blog | Salman Najah',
@@ -17,18 +17,29 @@ type BlogFrontMatter = {
     slug?: string
 }
 
+// Used SSG using generateStaticParams for this page to generate static paths for each blog post
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const allBlogs = await fetchAllBlogs();
+  return allBlogs.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
+// NextJs by default expects the params to be a Promise, so we define the type accordingly
 interface PageProps {
-    params: Promise<{
-        slug: string;
-    }>;
+  params: Promise<{
+    slug: string
+  }>
 }
 
 export default async function SingleBlogPage({ params }: PageProps) {
-    const { slug } = await params;
+    const  slug = (await params).slug;
+    // or directly destructure like this: const { slug } = await params;
+
     const singleBlogData = await fetchSingleBlog(slug);
 
     if (!singleBlogData) {
-        redirect('/blog'); // Redirect to the blog index page if the blog post is not found
+        notFound();
     }
 
     // Using the below code we get the content and frontmatter of a blog separately
