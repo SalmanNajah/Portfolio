@@ -7,7 +7,6 @@ type BlogFrontMatter = {
     title: string
     date: string
     readTime: string
-    slug?: string // Added slug to the frontmatter type for consistency
 }
 
 // Ideally this should have been placed in a separate utility file, but for simplicity, it's included here.(Fetches single blog based on slug)

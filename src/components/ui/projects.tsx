@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from './container'
 import Image from 'next/image'
-import SideHeaders from './sideheaders'
 import { motion } from 'motion/react'
 import Link from 'next/link'
+import SideHeaders from '../sideheaders'
+import Container from '../container'
 //Imp TODO:
 //Change the layout in landing to only 3 and more in projects page
 // also adjust the spacing of the text description and image properly

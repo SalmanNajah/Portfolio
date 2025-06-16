@@ -3,7 +3,7 @@ import Container from "@/components/container";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import Projects from "@/components/projects";
+import Projects from "@/components/ui/projects";
 import Blog from "@/components/blog";
 import dynamic from "next/dynamic";
 
