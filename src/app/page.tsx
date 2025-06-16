@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Projects from "@/components/ui/projects";
-import Blog from "@/components/blog";
 import dynamic from "next/dynamic";
-
+import LandingBlogs from "@/components/landing-blog/landing-blog";
 const GithubGraph = dynamic(() => import("@/components/ui/github"), {
   ssr: false,
 });
@@ -49,7 +48,7 @@ export default function Home() {
       </Container>
       <Projects />
       <GithubGraph username="Salman-in" blockMargin={2} />
-      <Blog />
+      <LandingBlogs />
     </div>
   );
 }
