@@ -1,5 +1,7 @@
 import Container from "@/components/container";
 import Resume from "@/components/resume";
+import SideHeaders from "@/components/sideheaders";
+import Timeline from "@/components/timeline/timeline";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,15 +17,13 @@ export default async function AboutPage() {
                     About Me
                 </h1>
                 <div className="md:justify-between mt-6 md:flex ">
-                    <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base max-w-xl pb-4">
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm md:text-base max-w-xl pb-4">
                         I am a passionate web developer with a love for creating dynamic and user-friendly web applications. My journey in tech has been fueled by curiosity and a desire to learn. I enjoy tackling challenges and finding innovative solutions to problems.
                     </p>
                     <Resume />
                 </div>
-
-                <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">
-                    Timeline coming soon
-                </p>
+                <SideHeaders>Here&#39;s a timeline of my journey so far</SideHeaders>
+                <Timeline />
             </Container>
         </div>
     );

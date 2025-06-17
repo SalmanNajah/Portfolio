@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Container from '../container'
 import Link from 'next/link'
-import { motion, px, useMotionValueEvent, useScroll } from "motion/react"
+import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { IconX } from '@tabler/icons-react'
 import DarkModeToggle from '../darkmode'
 import Hamburger from '../hamburger'
