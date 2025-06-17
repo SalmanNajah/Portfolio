@@ -9,7 +9,7 @@ const LandingBlogs = async () => {
   const latestBlogs = allBlogs.slice(0, 2);
   return (
     <div>
-      <Container className='min-h-[200px] md:pb-12 pb-6 md:pt-6 pt-3 border-b-1'>
+      <Container className='min-h-[200px] pb-6 md:pt-6 pt-3 border-b-1 border-neutral-200 dark:border-neutral-700'>
         <SideHeaders>Some of my writings</SideHeaders>
         <div className="flex flex-col gap-4 mt-8">
           {latestBlogs.map((blog, idx) => (
