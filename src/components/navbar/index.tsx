@@ -101,6 +101,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-//chagne the scondary text color to a more neutral color
-// watvch athe vdo and complete basic blogs and setup tjen beautify
