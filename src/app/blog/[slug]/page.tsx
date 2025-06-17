@@ -14,7 +14,6 @@ interface BlogProps {
 }
 
 // Dynamically generating metadata for each blog post based on its frontmatter
-
 export async function generateMetadata({ params }: BlogProps) {
     const frontmatter = await getBlogFrontMatterBySlug((await params).slug);
 
@@ -44,7 +43,6 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-// NextJs by default expects the params to be passed directly as an object
 export default async function SingleBlogPage({ params }: BlogProps) {
   const { slug } = await params;
   const singleBlogData = await fetchSingleBlog(slug);
