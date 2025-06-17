@@ -14,7 +14,7 @@ const ProjectHome = () => {
         </SideHeaders>
         <ProjectContent limit={4}/>
         <div className="mt-6 flex justify-start pl-1">
-          <Link href="/blog" className="text-sm text-neutral-600 dark:text-neutral-300 underline hover:no-underline transition">
+          <Link href="/projects" className="text-sm text-neutral-600 dark:text-neutral-300 underline hover:no-underline transition">
             See All Projects →
           </Link>
         </div>
