@@ -1,5 +1,4 @@
 import Container from '@/components/container'
-import React from 'react'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 import { fetchAllBlogs, fetchSingleBlog, getBlogFrontMatterBySlug } from '@/lib/mdx'
@@ -10,10 +9,14 @@ import { fetchAllBlogs, fetchSingleBlog, getBlogFrontMatterBySlug } from '@/lib/
 //     keywords: 'blog, writings, web development, technology, Salman Najah',
 // }
 
+interface BlogProps {
+  params: Promise<{ slug: string }>
+}
+
 // Dynamically generating metadata for each blog post based on its frontmatter
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const frontmatter = await getBlogFrontMatterBySlug(params.slug);
+export async function generateMetadata({ params }: BlogProps) {
+    const frontmatter = await getBlogFrontMatterBySlug((await params).slug);
 
     if (!frontmatter) {
         notFound();
@@ -41,47 +44,34 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-// NextJs by default expects the params to be a Promise, so we define the type accordingly
-interface PageProps {
-  params: Promise<{
-    slug: string
-  }>
-}
+// NextJs by default expects the params to be passed directly as an object
+export default async function SingleBlogPage({ params }: BlogProps) {
+  const { slug } = await params;
+  const singleBlogData = await fetchSingleBlog(slug);
+  if (!singleBlogData) {
+    notFound();
+  }
 
-export default async function SingleBlogPage({ params }: PageProps) {
-    const  slug = (await params).slug;
-    // or directly destructure like this: const { slug } = await params;
+  const { content, frontmatter } = await compileMDX<BlogFrontMatter>({
+    source: singleBlogData,
+    options: { parseFrontmatter: true },
+  });
 
-    const singleBlogData = await fetchSingleBlog(slug);
+  const formattedDate = frontmatter.date
+    ? new Date(frontmatter.date).toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : '';
 
-    if (!singleBlogData) {
-        notFound();
-    }
-
-    // Using the below code we get the content and frontmatter of a blog separately
-    const { content, frontmatter } = await compileMDX<BlogFrontMatter>({
-        source: singleBlogData,
-        options: { parseFrontmatter: true },
-    })
-
-    // Formatting the date
-    let formattedDate = ''
-    formattedDate = frontmatter.date
-        ? new Date(frontmatter.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
-        : ''
-
-
-    return (
-        <Container className='md:pt-24 pt-20 prose dark:prose-invert pb-8 min-h-screen'>
-            <div className='flex justify-between mb-4 text-sm text-neutral-500 dark:text-neutral-400'>
-                <div>
-                    {frontmatter.readTime}
-                </div>
-                <div>
-                    {formattedDate}
-                </div>
-            </div>
-            {content}
-        </Container>
-    )
+  return (
+    <Container className="md:pt-24 pt-20 prose dark:prose-invert pb-8 min-h-screen">
+      <div className="flex justify-between mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+        <div>{frontmatter.readTime}</div>
+        <div>{formattedDate}</div>
+      </div>
+      {content}
+    </Container>
+  );
 }
