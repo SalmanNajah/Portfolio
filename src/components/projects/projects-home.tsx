@@ -27,11 +27,8 @@ export default ProjectHome;
 
 //TODO
 // 5. Add techstacks used (yt video)
-// 9. Add blogs
 // 10. Add a contact form
 // 11. Add a footer with social hrefs
-// 12. add git graph
-// 14. global.css not working properly
 // built with love by salman najah
 
 // DONE
@@ -41,3 +38,5 @@ export default ProjectHome;
 // 4. Add hover effects to the cards (show border on hover only) - DONE
 // 8. Add dark mode support - DONE
 // 13. Made mobile responsive - DONE
+// 9. Add blogs - DONE
+// 12. add git graph - DONE

@@ -1,12 +1,13 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import Container from '../container'
-import Link from 'next/link'
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { IconX } from '@tabler/icons-react'
 import DarkModeToggle from '../darkmode'
 import Hamburger from '../hamburger'
 import MobileNavbar from './mobile'
+import { Link } from 'next-view-transitions'
+// import Link from 'next/link'
 
 const Navbar = () => {
   const [hovered, setHovered] = useState<null | number>(null)
