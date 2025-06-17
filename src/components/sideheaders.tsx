@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
 import { motion } from 'motion/react'
+import { cn } from '@/lib/utils';
 
-const SideHeaders = ({ children }: { children: React.ReactNode }) => {
+const SideHeaders = ({ children, className }: { children: React.ReactNode, className?: string }) => {
   return (
     <motion.div
-      className="relative inline-block text-base m-2 bg-neutral-200/70 dark:bg-neutral-700/30 text-neutral-600 dark:text-neutral-300 font-medium py-0.5 px-1"
+      className={cn("relative inline-block text-base m-2 bg-neutral-200/70 dark:bg-neutral-700/30 text-neutral-600 dark:text-neutral-300 font-medium py-0.5 px-1", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.9, ease: 'easeInOut', delay: 0.5 }}
