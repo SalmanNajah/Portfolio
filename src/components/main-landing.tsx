@@ -35,7 +35,7 @@ const MainLanding = () => {
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-neutral-500 dark:text-neutral-400 font-light pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
-            21, I build things, break stuff, and figure it out as I go. Deep into web, systems, and anything that scales or sparks curiosity. Obsessed with clean builds, clever tools, and ideas that stick. Still learning, still building.
+            21, I build things, break them, and learn by figuring things out. I’m deeply into the web, systems, and anything that scales or sparks curiosity. I have a strong focus on clean architecture, smart tools, and ideas that leave an impact. Always learning, always building.
           </motion.p>
         </div>
       </Container>
