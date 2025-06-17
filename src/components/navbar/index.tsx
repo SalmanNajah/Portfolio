@@ -54,11 +54,12 @@ const Navbar = () => {
       {mounted && (
         <Container>
           <motion.nav
-            className="hidden max-w-lg z-50 fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto md:flex items-center justify-between md:py-4 rounded-full px-6 mt-2 backdrop-blur-md bg-white/30 dark:bg-neutral-900/30"
+            className="hidden max-w-lg z-50 fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto md:flex items-center justify-between md:py-3 rounded-full px-4 mt-2 backdrop-blur-md bg-white/30 dark:bg-neutral-900/30"
             animate={{
               boxShadow: scrolled ? "var(--shadow-derek)" : "none",
               width: scrolled ? "50%" : "60%",
-              y: scrolled ? 5 : 0,
+              y: scrolled ? 7 : 0,
+              borderRadius: scrolled ? "5rem" : "2rem",
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
@@ -68,7 +69,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   key={idx}
-                  className="relative text-sm px-4 py-2"
+                  className="relative text-sm px-3 py-2"
                   onMouseEnter={() => setHovered(idx)}
                   onMouseLeave={() => setHovered(null)}
                 >
