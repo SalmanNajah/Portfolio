@@ -1,8 +1,6 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'motion/react'
-import Link from 'next/link'
 import SideHeaders from '../sideheaders'
 import Container from '../container'
 
