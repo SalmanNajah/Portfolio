@@ -34,7 +34,7 @@ const links = [
 const LinksPage = () => {
     return (
         <div>
-            <Container className="md:pt-24 pt-24 min-h-[120vh] border-b border-neutral-300 dark:border-neutral-700 pb-8">
+            <Container className="md:pt-24 pt-24 min-h-full border-b border-neutral-300 dark:border-neutral-700 pb-8">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     Links
                 </h1>
