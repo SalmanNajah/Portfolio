@@ -14,10 +14,10 @@ const Footer = () => {
                         <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
-                        <li><Link href="https://github.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</Link></li>
-                        <li><Link href="https://twitter.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</Link></li>
-                        <li><Link href="https://linkedin.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</Link></li>
-                        <li><Link href="https://instagram.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</Link></li>
+                        <li><Link href="https://github.com/Salman-in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</Link></li>
+                        <li><Link href="https://twitter.com/salmancodess" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</Link></li>
+                        <li><Link href="https://linkedin.com/in/salman-najah" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</Link></li>
+                        <li><Link href="https://instagram.com/salmaan.in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
                         <li><Link href="/resources" className="hover:text-neutral-800 dark:hover:text-neutral-300">Resources</Link></li>
