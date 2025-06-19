@@ -14,10 +14,10 @@ const Footer = () => {
                         <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
-                        <li><a href="https://github.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</a></li>
-                        <li><a href="https://linkedin.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</a></li>
-                        <li><a href="https://twitter.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</a></li>
-                        <li><a href="https://instagram.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li><Link href="https://github.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</Link></li>
+                        <li><Link href="https://linkedin.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</Link></li>
+                        <li><Link href="https://twitter.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</Link></li>
+                        <li><Link href="https://instagram.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
                         <li><Link href="/snippets" className="hover:text-neutral-800 dark:hover:text-neutral-300">Snippets</Link></li>
