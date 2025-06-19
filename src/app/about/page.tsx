@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
     return (
         <div>
-            <Container className="min-h-[120vh] pt-24 pb-8 border-neutral-200 dark:border-neutral-700 ">
+            <Container className="min-h-full pt-24 pb-8 border-neutral-200 dark:border-neutral-700 ">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     About Me
                 </h1>
                 <div className="md:justify-between mt-6 md:flex ">
-                    <p className="text-neutral-500 dark:text-neutral-400 text-sm md:text-base max-w-xl pb-4">
-                        I am a passionate web developer with a love for creating dynamic and user-friendly web applications. My journey in tech has been fueled by curiosity and a desire to learn. I enjoy tackling challenges and finding innovative solutions to problems.
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm md:text-base max-w-[40rem] pb-4">
+                            I'm a second-year engineering student with a deep interest in building for the web. I enjoy working across the full stack, diving into how systems function behind the scenes, and constantly experimenting with new technologies. Most of my learning comes from hands-on exploration - trying, failing, and building again. Recently, I’ve been exploring how AI can intersect with the web to create meaningful tools. I'm also actively contributing to open source and working on digital products of my own.
                     </p>
                     <Resume />
                 </div>
