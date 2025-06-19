@@ -1,0 +1,39 @@
+import React from 'react'
+import Link from 'next/link'
+import Container from '../container'
+
+const Footer = () => {
+    return (
+        <footer>
+            <Container className='pt-8 pb-6 text-neutral-500 space-y-8 border-t-1 border-neutral-200 dark:border-neutral-700 '>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8">
+                    <ul className="list-none space-y-3">
+                        <li><Link href="/" className="hover:text-neutral-800 dark:hover:text-neutral-300">Home</Link></li>
+                        <li><Link href="/blog" className="hover:text-neutral-800 dark:hover:text-neutral-300">Blog</Link></li>
+                        <li><Link href="/projects" className="hover:text-neutral-800 dark:hover:text-neutral-300">Projects</Link></li>
+                        <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
+                    </ul>
+                    <ul className="list-none space-y-3">
+                        <li><a href="https://github.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</a></li>
+                        <li><a href="https://linkedin.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</a></li>
+                        <li><a href="https://instagram.com/" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</a></li>
+                    </ul>
+                    <ul className="list-none space-y-3">
+                        <li><Link href="/snippets" className="hover:text-neutral-800 dark:hover:text-neutral-300">Snippets</Link></li>
+                        <li><Link href="/resources" className="hover:text-neutral-800 dark:hover:text-neutral-300">Resources</Link></li>
+                        <li><Link href="/demos" className="hover:text-neutral-800 dark:hover:text-neutral-300">Live Demos</Link></li>
+                        <li><Link href="/freecodecamp" className="hover:text-neutral-800 dark:hover:text-neutral-300">freeCodeCamp</Link></li>
+                        <li><Link href="/boxshadows" className="hover:text-neutral-800 dark:hover:text-neutral-300">Box Shadows</Link></li>
+                        <li><Link href="/inspiration" className="hover:text-neutral-800 dark:hover:text-neutral-300">Design Inspiration</Link></li>
+                    </ul>
+                </div>
+                <div className='text-sm'>
+                    Built with love by <span className='font-bold'>Salman Najah</span>
+                </div>
+            </Container>
+        </footer>
+    )
+}
+
+export default Footer
