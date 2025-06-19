@@ -1,12 +1,12 @@
 import React from 'react'
-import Link from 'next/link'
 import Container from '../container'
+import { Link } from 'next-view-transitions'
 
 const Footer = () => {
     return (
         <footer>
             <Container className='pt-8 pb-6 text-neutral-500 space-y-8 border-t-1 border-neutral-200 dark:border-neutral-700 '>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-5">
                     <ul className="list-none space-y-3">
                         <li><Link href="/" className="hover:text-neutral-800 dark:hover:text-neutral-300">Home</Link></li>
                         <li><Link href="/blog" className="hover:text-neutral-800 dark:hover:text-neutral-300">Blog</Link></li>
@@ -14,10 +14,10 @@ const Footer = () => {
                         <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
-                        <li><Link href="https://github.com/Salman-in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</Link></li>
-                        <li><Link href="https://twitter.com/salmancodess" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</Link></li>
-                        <li><Link href="https://linkedin.com/in/salman-najah" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</Link></li>
-                        <li><Link href="https://instagram.com/salmaan.in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</Link></li>
+                        <li><a href="https://github.com/Salman-in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</a></li>
+                        <li><a href="https://twitter.com/salmancodess" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</a></li>
+                        <li><a href="https://linkedin.com/in/salman-najah" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/salmaan.in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</a></li>
                     </ul>
                     <ul className="list-none space-y-3">
                         <li><Link href="/resources" className="hover:text-neutral-800 dark:hover:text-neutral-300">Resources</Link></li>
