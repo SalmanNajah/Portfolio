@@ -24,19 +24,3 @@ const ProjectHome = () => {
 }
 
 export default ProjectHome;
-
-//TODO
-// 5. Add techstacks used (yt video)
-// 10. Add a contact form
-// 11. Add a footer with social hrefs
-// built with love by salman najah
-
-// DONE
-// 1. Add hrefs to the projects (make whole card clickable) using next/href - DONE
-// 2. Add animations to the projects - DONE
-// 3. style the cards properly  - justified to center DONE
-// 4. Add hover effects to the cards (show border on hover only) - DONE
-// 8. Add dark mode support - DONE
-// 13. Made mobile responsive - DONE
-// 9. Add blogs - DONE
-// 12. add git graph - DONE
