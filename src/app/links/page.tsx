@@ -1,5 +1,5 @@
 import Container from '@/components/container';
-import { IconBrandNextjs, IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandNextjs, IconBrandTwitter, IconBrandGithub, IconBrandLinkedin, IconBrandMedium } from '@tabler/icons-react';
 import { Link } from 'next-view-transitions';
 import React from 'react';
 
@@ -23,6 +23,11 @@ const links = [
         title: "LinkedIn",
         url: "https://www.linkedin.com/in/salman-najah/",
         icon: IconBrandLinkedin,
+    },
+    {
+        title: "Medium",
+        url: "https://medium.com/@salmannajah",
+        icon: IconBrandMedium,
     }
 ];
 
