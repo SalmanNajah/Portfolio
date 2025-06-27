@@ -7,35 +7,65 @@
 @theme inline {
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
 
-  --shadow-standard: 0px 2px 3px -1px rgba(0,0,0,0.1),
-                     0px 1px 0px 0px rgba(25,28,33,0.02),
-                     0px 0px 0px 1px rgba(25,28,33,0.08);
+  --shadow-standard: 0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 
   --shadow-derek: 0px 0px 0px 1px rgb(0 0 0 / 0.06),
-                  0px 1px 1px -0.5px rgb(0 0 0 / 0.06),
-                  0px 3px 3px -1.5px rgb(0 0 0 / 0.06), 
-                  0px 6px 6px -3px rgb(0 0 0 / 0.06),
-                  0px 12px 12px -6px rgb(0 0 0 / 0.06),
-                  0px 24px 24px -12px rgb(0 0 0 / 0.06);
+    0px 1px 1px -0.5px rgb(0 0 0 / 0.06),
+    0px 3px 3px -1.5px rgb(0 0 0 / 0.06),
+    0px 6px 6px -3px rgb(0 0 0 / 0.06),
+    0px 12px 12px -6px rgb(0 0 0 / 0.06),
+    0px 24px 24px -12px rgb(0 0 0 / 0.06);
 
   --shadow-aesthetic: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  --shadow-inset: 
+    inset 0 6px 6px -4px rgba(150, 150, 150, 0.1),
+    inset 0 -6px 6px -4px rgba(150, 150, 150, 0.1),
+    inset 6px 0 6px -4px rgba(150, 150, 150, 0.1),
+    inset -6px 0 6px -4px rgba(150, 150, 150, 0.1);
 }
 
 .dark {
   --color-primary: var(--color-neutral-100);
   --color-secondary: var(--color-neutral-300);
+  --color-border: var(--color-neutral-700);
 
   --shadow-standard: 0px 2px 3px -1px rgba(200, 200, 200, 0.05),
-                     0px 1px 0px 0px rgba(200, 200, 200, 0.03),
-                     0px 0px 0px 1px rgba(200, 200, 200, 0.08);
+    0px 1px 0px 0px rgba(200, 200, 200, 0.03),
+    0px 0px 0px 1px rgba(200, 200, 200, 0.08);
 
   --shadow-derek: 0px 0px 0px 1px rgba(200, 200, 200, 0.06),
-                  0px 1px 1px -0.5px rgba(200, 200, 200, 0.05),
-                  0px 3px 3px -1.5px rgba(200, 200, 200, 0.05),
-                  0px 6px 6px -3px rgba(200, 200, 200, 0.05),
-                  0px 12px 12px -6px rgba(200, 200, 200, 0.04),
-                  0px 24px 24px -12px rgba(200, 200, 200, 0.03);
+    0px 1px 1px -0.5px rgba(200, 200, 200, 0.05),
+    0px 3px 3px -1.5px rgba(200, 200, 200, 0.05),
+    0px 6px 6px -3px rgba(200, 200, 200, 0.05),
+    0px 12px 12px -6px rgba(200, 200, 200, 0.04),
+    0px 24px 24px -12px rgba(200, 200, 200, 0.03);
 
   --shadow-aesthetic: 0 3px 10px rgba(200, 200, 200, 0.1);
+
+  --shadow-inset: 
+    inset 0 6px 6px -4px rgb(0, 0, 0),
+    inset 0 -6px 6px -4px rgb(0, 0, 0),
+    inset 6px 0 6px -4px rgb(0, 0, 0),
+    inset -6px 0 6px -4px rgb(0, 0, 0);
+}
+
+.shadow-inset-all {
+  box-shadow: var(--shadow-inset);
+}
+.shadow-standard {
+  box-shadow: var(--shadow-standard);
+}
+.shadow-derek {
+  box-shadow: var(--shadow-derek);
+}
+.shadow-aesthetic {
+  box-shadow: var(--shadow-aesthetic);
+}
+.border-color-new {
+  border-color: var(--color-border);
 }
