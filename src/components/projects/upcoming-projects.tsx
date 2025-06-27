@@ -35,7 +35,7 @@ const UpcomingProjects = ({ limit }: { limit?: number }) => {
     const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
     return (
-        <Container className='pt-4 pb-8 border-b-0'>
+        <Container className='pt-4 pb-8  shadow-inset-all dark:shadow-inset-all'>
             <div>
                 <SideHeaders>
                     Upcoming works
