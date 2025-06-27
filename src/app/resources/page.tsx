@@ -6,11 +6,13 @@ export const metadata: Metadata = {
     description: "Some of my resources and writings.",
 };
 
+//change to min full after adding content
+
 export default async function AllBlogsPage() {
 
     return (
         <div>
-            <Container className="min-h-full pt-24 pb-8 border-neutral-200 dark:border-neutral-700">
+            <Container className="min-h-screen pt-24 pb-8 border-color-new dark:border-color-new">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     Resources
                 </h1>

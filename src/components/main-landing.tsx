@@ -8,7 +8,7 @@ import Designation from './designation';
 const MainLanding = () => {
   return (
     <div>
-      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-neutral-200 dark:border-neutral-700">
+      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-color-new dark:border-color-new">
         <motion.div
           className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
           initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}

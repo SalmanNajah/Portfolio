@@ -5,7 +5,7 @@ import { Link } from 'next-view-transitions'
 const Footer = () => {
     return (
         <footer>
-            <Container className='pt-8 pb-6 text-neutral-500 space-y-8 border-t-1 border-neutral-200 dark:border-neutral-700'>
+            <Container className='pt-8 pb-6 text-neutral-500 space-y-8 border-t-1 border-color-new dark:border-color-new'>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-5">
                     <ul className="list-none space-y-3">
                         <li><Link href="/" className="hover:text-neutral-800 dark:hover:text-neutral-300">Home</Link></li>

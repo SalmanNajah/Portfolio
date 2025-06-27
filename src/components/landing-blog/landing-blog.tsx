@@ -13,7 +13,7 @@ const LandingBlogs = async () => {
         <SideHeaders>Some of my writings</SideHeaders>
         <div className="flex flex-col gap-4 mt-8">
           {latestBlogs.map((blog, idx) => (
-            <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg hover:shadow-standard hover:scale-101 transition-all duration-100 ease-in-out border-1 border-neutral-200 dark:border-neutral-700">
+            <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg hover:shadow-standard hover:scale-101 transition-all duration-100 ease-in-out border-1 border-color-new dark:border-color-new">
               <div className="flex justify-between items-center">
                 <span className="font-bold">{blog?.title}</span>
                 <span className="text-sm text-neutral-500 dark:text-neutral-400">{blog?.readTime}</span>

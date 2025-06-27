@@ -34,7 +34,7 @@ const links = [
 const LinksPage = () => {
     return (
         <div>
-            <Container className="md:pt-24 pt-24 min-h-full border-b border-neutral-300 dark:border-neutral-700 pb-8">
+            <Container className="md:pt-24 pt-24 min-h-full border-b border-color-new dark:border-color-new pb-8">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     Links
                 </h1>
@@ -49,7 +49,7 @@ const LinksPage = () => {
                                 key={idx}
                                 href={link.url}
                                 target="_blank"
-                                className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-md hover:shadow-derek transition-all duration-100 ease-in-out border-1 border-neutral-200 dark:border-neutral-700 dark:hover:shadow-[var(--shadow-derek)]"
+                                className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-md hover:shadow-derek transition-all duration-100 ease-in-out border-1 border-color-new dark:border-color-new dark:hover:shadow-[var(--shadow-derek)]"
                             >
                                 <div className="flex justify-between items-center">
                                     <span className="font-bold flex items-center gap-2">
