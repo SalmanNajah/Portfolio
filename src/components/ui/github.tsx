@@ -44,7 +44,7 @@ const GithubGraph = ({
 
     return (
         <div>
-            <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-b-1 border-neutral-200 dark:border-neutral-700">
+            <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-y-1 border-color-new dark:border-color-new shadow-inset-all dark:shadow-inset-all">
                 <SideHeaders>GitHub Contributions</SideHeaders>
 
                 <Link href={"https://github.com/Salman-in"} target="_blank" className="flex justify-center pt-8">

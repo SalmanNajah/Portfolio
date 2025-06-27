@@ -26,8 +26,12 @@ export default async function AboutPage() {
                     </p>
                     <Resume />
                 </div>
-                <SideHeaders className="md:mt-4 mt-8">Here&#39;s a timeline of my journey so far</SideHeaders>
-                <Timeline />
+            </Container>
+            <Container className="border-t border-color-new dark:border-color-new md:pt-6 pt-3 pb-6 shadow-inset-all dark:shadow-inset-all">
+                <div>
+                    <SideHeaders className="md:mt-4 mt-8">Here&#39;s a timeline of my journey so far</SideHeaders>
+                    <Timeline />
+                </div>
             </Container>
         </div>
     );
