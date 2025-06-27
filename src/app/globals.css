@@ -57,15 +57,6 @@
 .shadow-inset-all {
   box-shadow: var(--shadow-inset);
 }
-.shadow-standard {
-  box-shadow: var(--shadow-standard);
-}
-.shadow-derek {
-  box-shadow: var(--shadow-derek);
-}
-.shadow-aesthetic {
-  box-shadow: var(--shadow-aesthetic);
-}
 .border-color-new {
   border-color: var(--color-border);
 }
