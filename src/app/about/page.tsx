@@ -21,7 +21,7 @@ export default async function AboutPage() {
                         I’m a second-year engineering student deeply interested in building for the web.
                         I love exploring the full stack - especially how systems work behind the scenes.
                         Most of what I’ve learned comes from trying, failing, and building again.
-                        Lately, I've been curious about how AI can intersect with the web to create meaningful tools.
+                        Lately, I’ve been curious about how AI can intersect with the web to create meaningful tools.
                         I’m also contributing to open source and building digital products on the side.
                     </p>
                     <Resume />
