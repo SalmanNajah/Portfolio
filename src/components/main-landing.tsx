@@ -4,11 +4,11 @@ import Container from './container'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Designation from './designation';
 const MainLanding = () => {
   return (
     <div>
-        <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-neutral-200 dark:border-neutral-700">
+      <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-neutral-200 dark:border-neutral-700">
         <motion.div
           className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
           initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
@@ -20,22 +20,23 @@ const MainLanding = () => {
             <Image src="/avatar.png" alt="Logo" width={150} height={150} className="rounded-xl object-cover border-secondary border w-32 h-32 md:w-48 md:h-48" />
           </Link>
         </motion.div>
-        <div
-          className="order-2 md:order-1">
+        <div className="order-2 md:order-1 flex flex-col justify-center">
+          <div className='flex md:flex-row flex-col gap-2 md:gap-4'>
+            <motion.h1 initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.1 }}
+              className="md:order-1 order-2 text-3xl md:text-5xl font-bold text-primary dark:text-white tracking-tight flex md:justify-self-start">
+              Salman Najah
+            </motion.h1>
+            <Designation designation="Full Stack Engineer" className='mt-2 md:mt-4 md:order-2 order-1 my-auto' />
+          </div>
 
-          <motion.h1 initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-primary dark:text-white tracking-tight flex justify-self-start md:justify-self-start">
-            Salman Najah
-          </motion.h1>
-
-          <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+          <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: -20 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-neutral-500 dark:text-neutral-400 font-light pt-4 text-sm md:text-base max-w-84 flex justify-self-start md:max-w-md">
-            21, I build things, break them, and learn by figuring things out. I’m deeply into the web, systems, and anything that scales or sparks curiosity. I have a strong focus on clean architecture, smart tools, and ideas that leave an impact. Always learning, always building.
+            className="text-neutral-500 md:text-base pt-4 max-w-90 flex justify-self-start md:max-w-lg">
+            I’m 21. I tinker with code, break stuff more than I should, and learn by putting it back together.
           </motion.p>
         </div>
       </Container>
