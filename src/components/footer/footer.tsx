@@ -22,7 +22,7 @@ const Footer = () => {
                     <ul className="list-none space-y-3">
                         <li><Link href="/resources" className="hover:text-neutral-800 dark:hover:text-neutral-300">Resources</Link></li>
                         <li><Link href="/snippets" className="hover:text-neutral-800 dark:hover:text-neutral-300">Snippets</Link></li>
-                        <li><Link href="/medium" className="hover:text-neutral-800 dark:hover:text-neutral-300">Medium</Link></li>
+                        <li><Link href="https://medium.com/@salmannajah123" className="hover:text-neutral-800 dark:hover:text-neutral-300">Medium</Link></li>
                     </ul>
                 </div>
                 <div className='text-sm'>
