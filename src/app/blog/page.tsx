@@ -20,7 +20,7 @@ export default async function AllBlogsPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     All Blogs
                 </h1>
-                <p className="text-neutral-500 pt-4 text-sm md:text-base max-w-2xl">I&#39;ve been programming for almost two years. Over the past year, I explored different technologies and built real-world projects. This blog is where I share what I&#39;ve learned and the challenges I&#39;ve faced along the way.</p>
+                <p className="text-neutral-500 pt-4 text-sm md:text-base max-w-2xl">My thoughts, ideas, and insights about development, design, and more!</p>
             </Container>
             <Container className=" shadow-inset-all dark:shadow-inset-all">
                 <div className="flex flex-col gap-4 py-8">
