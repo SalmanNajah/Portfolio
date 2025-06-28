@@ -16,13 +16,13 @@ export default async function AllBlogsPage() {
 
     return (
         <div>
-            <Container className="min-h-full pt-24 pb-8 border-color-new dark:border-color-new">
+            <Container className="min-h-full pt-24 pb-8 border border-color-new dark:border-color-new">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     All Blogs
                 </h1>
                 <p className="text-neutral-500 pt-4 text-sm md:text-base max-w-2xl">My thoughts, ideas, and insights about development, design, and more!</p>
             </Container>
-            <Container className=" shadow-inset-all dark:shadow-inset-all">
+            <Container className="min-h-[50vh] shadow-inset-all dark:shadow-inset-all">
                 <div className="flex flex-col gap-4 py-8">
                     {allBlogs.map((blog, idx) => (
                         <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg hover:shadow-derek transition-all duration-100 ease-in-out  border-1 border-neutral-300 dark:border-neutral-700 dark:hover:shadow-[var(--shadow-standard)]">
@@ -39,3 +39,4 @@ export default async function AllBlogsPage() {
 }
 
 // shadow inset here might delete later
+// also the container height change it later
