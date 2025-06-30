@@ -11,8 +11,8 @@ const MainLanding = () => {
       <Container className="z-10 relative min-h-full pt-30 flex flex-col md:flex-row md:justify-between pb-8 border-b-1 border-color-new dark:border-color-new">
         <motion.div
           className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
-          initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          initial={{ opacity: 0, filter: "blur(8px)"}}
+          whileInView={{ opacity: 1, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
@@ -35,6 +35,7 @@ const MainLanding = () => {
           <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: -20 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-neutral-500 md:text-base pt-4 max-w-90 flex justify-self-start md:max-w-lg">
             I’m 21. I tinker with code, break stuff more than I should, and learn by putting it back together.
           </motion.p>
