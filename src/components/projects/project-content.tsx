@@ -8,49 +8,49 @@ import Link from 'next/link'
 // also adjust the spacing of the text description and image properly
 
 const projects = [
-    {
-      title: "Portfolio Website Template",
-      description: "Modern portfolio template built using HTML, CSS and JS.",
-      href: "https://github.com/Salman-in/portfolio-v1",
-      image: "/image2.png",
-      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "GitHub Pages"]
-    },
-    {
-      title: "BrainSpace",
-      description: "A place to store all your brain dumps. A modern, responsive web app for managing notes and ideas.",
-      href: "https://github.com/Salman-in/brainspace",
-      image: "/image3.png",
-      skills: ["React", "Next.js", "Stripe", "Sanity.io", "Redux Toolkit"]
-    },
-    {
-      title: "Real-time Chat Application",
-      description: "Chat app with groups, private messaging, and authentication. Built with React and Socket.io.",
-      href: "https://github.com/Salman-in/skill-swap",
-      image: "/image1.png",
-      skills: ["React", "Node.js", "Socket.io", "Express", "MongoDB"]
-    },
-    {
-      title: "Task Manager App",
-      description: "Organize tasks, set deadlines, and track progress. Responsive and user-friendly interface.",
-      href: "https://github.com/yourusername/task-manager-app",
-      image: "/image3.png",
-      skills: ["React", "Redux", "TypeScript", "Firebase"]
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Weather dashboard with real-time data, forecasts, and location search. Built with APIs.",
-      href: "https://github.com/yourusername/weather-dashboard",
-      image: "/image1.png",
-      skills: ["React", "OpenWeatherMap API", "Tailwind CSS"]
-    },
-    {
-      title: "Blog Platform",
-      description: "Full-featured blog platform with markdown support and user authentication.",
-      href: "https://github.com/yourusername/blog-platform",
-      image: "/image2.png",
-      skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
-    }
-  ]
+  {
+    title: "Snippets",
+    description: "A web app to save and organize your favorite code snippets.",
+    href: "https://github.com/Salman-in/Snippet-App",
+    image: "/snippets.png",
+    skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
+  },
+  {
+    title: "Portfolio Website Template",
+    description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
+    href: "https://github.com/Salman-in/portfolio-v1",
+    image: "/portfolio.png",
+    skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
+  },
+  {
+    title: "Weather Dashboard",
+    description: "A dashboard providing real-time weather data, forecasts, and location search using APIs.",
+    href: "https://github.com/Salman-in/Weather-App",
+    image: "/weather.png",
+    skills: ["ReactJS", "TypeScript", "OpenWeatherMap API", "Tailwind CSS"]
+  },
+  {
+    title: "Earn Easy",
+    description: "A marketplace to buy, sell, or rent items locally with real-time communication.",
+    href: "https://github.com/so-sc/EarnEasy",
+    image: "/image1.png",
+    skills: ["React", "Node.js", "Express", "MongoDB"]
+  },
+  {
+    title: "Task Manager App",
+    description: "A task management tool to organize tasks, set deadlines, and track progress.",
+    href: "https://github.com/yourusername/task-manager-app",
+    image: "/image3.png",
+    skills: ["React", "Redux", "TypeScript", "Firebase"]
+  },
+  {
+    title: "Blog Platform",
+    description: "A full-featured blog platform with markdown support and secure user authentication.",
+    href: "https://github.com/yourusername/blog-platform",
+    image: "/image2.png",
+    skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
+  }
+];
 
 const ProjectContent = ({ limit }: { limit?: number }) => {
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
@@ -77,6 +77,7 @@ const ProjectContent = ({ limit }: { limit?: number }) => {
           <div className="mx-auto px-4 pb-6">
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
             <p className="text-sm text-secondary">{item.description}</p>
+            <p className='italic pt-4 text-xs text-neutral-700 dark:text-neutral-400'>{item.skills.join(", ")}</p>
           </div>
         </motion.div>
       ))}
