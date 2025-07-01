@@ -20,6 +20,7 @@ const Footer = () => {
                         <li><a href="https://instagram.com/salmaan.in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</a></li>
                     </ul>
                     <ul className="list-none space-y-3">
+                        <li><Link href="/contact" className="hover:text-neutral-800 dark:hover:text-neutral-300">Contact</Link></li>
                         <li><Link href="/resources" className="hover:text-neutral-800 dark:hover:text-neutral-300">Resources</Link></li>
                         <li><Link href="/snippets" className="hover:text-neutral-800 dark:hover:text-neutral-300">Snippets</Link></li>
                         <li><Link href="https://medium.com/@salmannajah123" className="hover:text-neutral-800 dark:hover:text-neutral-300">Medium</Link></li>

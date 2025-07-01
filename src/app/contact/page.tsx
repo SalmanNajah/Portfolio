@@ -1,3 +1,4 @@
+import ContactContent from "@/components/contact/contact-content";
 import Container from "@/components/container";
 import { Metadata } from "next";
 
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
 export default async function ContactPage() {
     return (
         <div>
-            <Container className="min-h-full pt-24 pb-8 border-color-new dark:border-color-new ">
-                <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
-                    Contact Me
+            <Container className="min-h-full pt-42 pb-44 border-color-new dark:border-color-new">
+                <div className="rounded-lg p-6 shadow-derek dark:shadow-[var(--shadow-derek)]">
+                <h1 className="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight pb-3">
+                    Want to work together? Let’s connect.
                 </h1>
-                <p className="text-neutral-500">Coming soooon</p>
+                <ContactContent />
+                </div>
             </Container>
         </div>
     );
