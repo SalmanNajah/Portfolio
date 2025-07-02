@@ -28,13 +28,13 @@ export default function ContactContent() {
         Or drop your email, and I’ll reach out.
       </p>
 
-      <div className="flex gap-2">
+      <div className="md:flex gap-2 flex flex-col md:flex-row">
         <input
           type="email"
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-grow px-4 py-2 text-sm rounded-md border border-color-new dark:border-color-new bg-white dark:bg-neutral-900 text-black dark:text-white placeholder-color-new dark:placeholder-color-new focus:outline-none focus:ring-1 focus:ring-neutral-500"
+          className="flex-grow max-w-lg px-4 py-2 text-sm rounded-md border border-color-new dark:border-color-new bg-white dark:bg-neutral-900 text-black dark:text-white placeholder-color-new dark:placeholder-color-new focus:outline-none focus:ring-1 focus:ring-neutral-500"
         />
         <button
           onClick={handleSend}

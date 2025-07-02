@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default async function ContactPage() {
     return (
         <div>
-            <Container className="min-h-full pt-42 pb-44 border-color-new dark:border-color-new">
+            <Container className="min-h-[calc(100vh-100px)] pt-56 border-color-new dark:border-color-new">
                 <div className="rounded-lg p-6 shadow-derek dark:shadow-[var(--shadow-derek)]">
                 <h1 className="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight pb-3">
-                    Want to work together? Let’s connect.
+                    Want to work together? Let's connect.
                 </h1>
                 <ContactContent />
                 </div>
