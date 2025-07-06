@@ -23,6 +23,13 @@ const projects = [
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
   {
+    title: "BrainSpace",
+    description: "A app to store all your extra information in one place, like a digital brain.",
+    href: "https://brainspace.salmannajah.me",
+    image: "/brainspace.png",
+    skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
+  },
+  {
     title: "Weather Dashboard",
     description: "A dashboard providing real-time weather data, forecasts, and location search using APIs.",
     href: "https://github.com/Salman-in/Weather-App",
@@ -35,13 +42,6 @@ const projects = [
     href: "https://github.com/so-sc/EarnEasy",
     image: "/image1.png",
     skills: ["React", "Node.js", "Express", "MongoDB"]
-  },
-  {
-    title: "Task Manager App",
-    description: "A task management tool to organize tasks, set deadlines, and track progress.",
-    href: "https://github.com/yourusername/task-manager-app",
-    image: "/image3.png",
-    skills: ["React", "Redux", "TypeScript", "Firebase"]
   },
   {
     title: "Blog Platform",
