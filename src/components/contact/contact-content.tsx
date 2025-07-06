@@ -1,15 +1,25 @@
 "use client";
 import { IconBrandX } from "@tabler/icons-react";
 import { useState } from "react";
+import { z } from "zod";
+
+const emailSchema = z.string().email({ message: "Please enter a valid email address." });
 
 export default function ContactContent() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSend = async () => {
     if (!email) return alert("Please enter your email.");
 
     try {
+      const parsedEmail = emailSchema.safeParse(email);
+      if (!parsedEmail.success) {
+        setError(parsedEmail.error.errors[0]?.message);
+        return;
+      }
+      setError("");
       setIsSubmitting(true);
       const res = await fetch("/api/send-email", {
         method: "POST",
@@ -69,6 +79,7 @@ export default function ContactContent() {
           Send
         </button>
       </div>
+      {error && <div className="text-red-500 text-sm pl-2">{error}</div>}
     </div>
   );
 }
