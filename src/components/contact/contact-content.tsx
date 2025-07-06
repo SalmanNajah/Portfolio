@@ -4,18 +4,36 @@ import { useState } from "react";
 
 export default function ContactContent() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSend = () => {
-    // write the logic to send the email #TODO
+  const handleSend = async () => {
     if (!email) return alert("Please enter your email.");
-    alert(`Email submitted: ${email}`);
-    setEmail("");
+
+    try {
+      setIsSubmitting(true);
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userEmail: email }),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      alert("Thanks! I’ll get back to you soon.");
+      setEmail("");
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
 
   return (
     <div className="w-full max-w-xl space-y-3 py-3 px-2">
       <a
-        href="https://twitter.com/messages/compose?recipient_id=salmancodess"
+        href="https://twitter.com/salmancodess"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center gap-2 px-4 mb-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md shadow hover:opacity-90 transition"
@@ -25,7 +43,14 @@ export default function ContactContent() {
       </a>
 
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        Or drop your email, and I’ll reach out.
+        Or drop your email and I’ll reach out, or{" "}
+        <a
+          href="mailto:salmannajah123@gmail.com?subject=Contact%20via%20Portfolio"
+          className="underline text-blue-600 dark:text-blue-400 hover:opacity-80"
+        >
+          email me directly
+        </a>
+        .
       </p>
 
       <div className="md:flex gap-2 flex flex-col md:flex-row">
@@ -38,7 +63,8 @@ export default function ContactContent() {
         />
         <button
           onClick={handleSend}
-          className="px-4 py-2 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-black text-sm font-medium rounded-md hover:opacity-90 transition"
+          className="px-4 py-2 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-black text-sm font-medium rounded-md hover:opacity-90 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={isSubmitting}
         >
           Send
         </button>

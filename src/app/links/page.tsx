@@ -26,7 +26,7 @@ const links = [
     },
     {
         title: "Medium",
-        url: "https://medium.com/@salmannajah",
+        url: "https://medium.com/@salmannajah123",
         icon: IconBrandMedium,
     }
 ];
@@ -34,7 +34,7 @@ const links = [
 const LinksPage = () => {
     return (
         <div>
-            <Container className="md:pt-24 pt-24 min-h-full border-b border-color-new dark:border-color-new pb-8">
+            <Container className="min-h-[calc(100vh-200px)] md:pt-24 pt-24 pb-8">
                 <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white tracking-tight">
                     Links
                 </h1>
