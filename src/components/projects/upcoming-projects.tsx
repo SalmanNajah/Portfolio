@@ -24,6 +24,12 @@ const projects = [
         skills: ["React", "Next.js", "OpenAI API", "TypeScript", "Prisma"]
     },
     {
+        title: "Humane AI",
+        description: "Building an AI-powered text summarization tool, which converts the AI generated text to human format.",
+        image: "/image6.png",
+        skills: ["React", "Next.js", "OpenAI API", "TypeScript", "Prisma"]
+    },
+    {
         title: "Expense Tracker",
         description: "Building an app to track your expenses and visualize spending habits. Simple, intuitive, and privacy-focused.",
         image: "/image5.png",
