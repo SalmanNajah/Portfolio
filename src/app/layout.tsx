@@ -5,11 +5,16 @@ import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from 'next-view-transitions'
 import Footer from "@/components/footer/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
+// const geist = Geist({
+//   subsets: ["latin"]
+// })
 
 export const metadata: Metadata = {
   title: "Salman Najah | Portfolio",
@@ -35,6 +40,7 @@ export default function RootLayout({
               <Footer />
             </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
     </ViewTransitions>
