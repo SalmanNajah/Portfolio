@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <MainLanding />
       <ProjectHome />
-      <UpcomingProjects limit={4} />
+      <UpcomingProjects limit={2} />
       <GithubWrapper />
       <LandingBlogs />
       <ContactSection />

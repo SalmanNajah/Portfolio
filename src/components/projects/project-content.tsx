@@ -9,16 +9,9 @@ import Link from 'next/link'
 
 const projects = [
   {
-    title: "Snippets",
-    description: "A web app to save and organize your favorite code snippets.",
-    href: "https://github.com/Salman-in/Snippet-App",
-    image: "/snippets.png",
-    skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
-  },
-  {
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
-    href: "https://github.com/Salman-in/portfolio-v1",
+    href: "https://salmannajah.me",
     image: "/portfolio.png",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
@@ -30,11 +23,18 @@ const projects = [
     skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
   },
   {
-    title: "Weather Dashboard",
-    description: "A dashboard providing real-time weather data, forecasts, and location search using APIs.",
-    href: "https://github.com/Salman-in/Weather-App",
-    image: "/weather.png",
-    skills: ["ReactJS", "TypeScript", "OpenWeatherMap API", "Tailwind CSS"]
+    title: "Hume AI",
+    description: "hume ai is an AI text humanizer that makes your AI-generated content undetectable and professionally polished.",
+    href: "https://humeai.salmannajah.me",
+    image: "/humeai.png",
+    skills: ["NextJS", "TypeScript", "Gemini API", "Tailwind CSS", "PostgreSQL", "Prisma"]
+  },
+  {
+    title: "Snippets",
+    description: "A web app to save and organize your favorite code snippets.",
+    href: "https://snippet-app-two.vercel.app/",
+    image: "/snippets.png",
+    skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
   },
   {
     title: "Earn Easy",
@@ -43,13 +43,6 @@ const projects = [
     image: "/image1.png",
     skills: ["React", "Node.js", "Express", "MongoDB"]
   },
-  {
-    title: "Blog Platform",
-    description: "A full-featured blog platform with markdown support and secure user authentication.",
-    href: "https://github.com/yourusername/blog-platform",
-    image: "/image2.png",
-    skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
-  }
 ];
 
 const ProjectContent = ({ limit }: { limit?: number }) => {

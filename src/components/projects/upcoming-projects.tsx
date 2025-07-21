@@ -6,12 +6,6 @@ import Container from '../container'
 
 const projects = [
     {
-        title: "BrainSpace",
-        description: "Building an app for storing all your brain dumps. A modern, responsive web app for managing notes and ideas.",
-        image: "/image3.png",
-        skills: ["React", "Next.js", "Stripe", "Sanity.io", "Redux Toolkit"]
-    },
-    {
         title: "Real-time Chat Application",
         description: "Building a Chat app with groups, private messaging, and authentication. Built with React and Socket.io.",
         image: "/image1.png",
@@ -24,16 +18,16 @@ const projects = [
         skills: ["React", "Next.js", "OpenAI API", "TypeScript", "Prisma"]
     },
     {
-        title: "Humane AI",
-        description: "Building an AI-powered text summarization tool, which converts the AI generated text to human format.",
-        image: "/image6.png",
-        skills: ["React", "Next.js", "OpenAI API", "TypeScript", "Prisma"]
-    },
-    {
         title: "Expense Tracker",
         description: "Building an app to track your expenses and visualize spending habits. Simple, intuitive, and privacy-focused.",
         image: "/image5.png",
         skills: ["React", "TypeScript", "Chart.js", "Firebase", "Tailwind CSS"]
+    },
+    {
+        title: "Blog Platform",
+        description: "Building a full-featured blog platform with markdown support and secure user authentication.",
+        image: "/image2.png",
+        skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
     }
 ]
 
