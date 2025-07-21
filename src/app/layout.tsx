@@ -18,8 +18,48 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Salman Najah | Portfolio",
-  description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js and React.",
-  // Add keywords for better SEO
+  description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
+  keywords: [
+    "Salman Najah",
+    "Portfolio",
+    "Web Developer",
+    "Software Engineer",
+    "Next.js",
+    "React",
+    "Frontend Developer",
+    "JavaScript",
+    "TypeScript",
+    "UI/UX",
+    "Personal Website"
+  ],
+  metadataBase: new URL("https://salmannajah.me"),
+  openGraph: {
+    title: "Salman Najah | Portfolio",
+    description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
+    url: "https://salmannajah.me",
+    siteName: "Salman Najah Portfolio",
+    images: [
+      {
+        url: "/avatar.png",
+        width: 512,
+        height: 512,
+        alt: "Salman Najah Avatar"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Salman Najah | Portfolio",
+    description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
+    site: "@salmanxcodes",
+    creator: "@salmanxcodes",
+    images: ["/avatar.png"]
+  },
+  alternates: {
+    canonical: "https://salmannajah.me"
+  }
 };
 
 export default function RootLayout({
