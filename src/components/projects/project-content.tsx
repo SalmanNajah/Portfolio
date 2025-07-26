@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import { IconBrandGithub, IconSourceCode } from '@tabler/icons-react'
+import { IconBrandGithub } from '@tabler/icons-react'
 //Imp TODO:
 //Change the layout in landing to only 3 and more in projects page
 // also adjust the spacing of the text description and image properly
