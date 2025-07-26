@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 import Link from 'next/link'
+import { IconBrandGithub, IconSourceCode } from '@tabler/icons-react'
 //Imp TODO:
 //Change the layout in landing to only 3 and more in projects page
 // also adjust the spacing of the text description and image properly
@@ -11,6 +12,7 @@ const projects = [
   {
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
+    sourcecode: "https://github.com/salman-in/portfolio",
     href: "https://salmannajah.me",
     image: "/portfolio.png",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
@@ -18,6 +20,7 @@ const projects = [
   {
     title: "BrainSpace",
     description: "A app to store all your extra information in one place, like a digital brain.",
+    sourcecode: "https://github.com/salman-in/brainspace",
     href: "https://brainspace.salmannajah.me",
     image: "/brainspace.png",
     skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
@@ -25,6 +28,7 @@ const projects = [
   {
     title: "Hume AI",
     description: "hume ai is an AI text humanizer that makes your AI-generated content undetectable and professionally polished.",
+    sourcecode: "https://github.com/salman-in/hume-ai",
     href: "https://humeai.salmannajah.me",
     image: "/humeai.png",
     skills: ["NextJS", "TypeScript", "Gemini API", "Tailwind CSS", "PostgreSQL", "Prisma"]
@@ -32,17 +36,11 @@ const projects = [
   {
     title: "Snippets",
     description: "A web app to save and organize your favorite code snippets.",
+    sourcecode: "https://github.com/salman-in/snippet-app",
     href: "https://snippet-app-two.vercel.app/",
     image: "/snippets.png",
     skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
-  },
-  {
-    title: "Earn Easy",
-    description: "A marketplace to buy, sell, or rent items locally with real-time communication.",
-    href: "https://github.com/so-sc/EarnEasy",
-    image: "/image1.png",
-    skills: ["React", "Node.js", "Express", "MongoDB"]
-  },
+  }
 ];
 
 const ProjectContent = ({ limit }: { limit?: number }) => {
@@ -68,7 +66,10 @@ const ProjectContent = ({ limit }: { limit?: number }) => {
             />
           </Link>
           <div className="mx-auto px-4 pb-6">
+            <div className='flex justify-between items-center'>
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+            <Link href={item.sourcecode}><IconBrandGithub className='h-4 w-4 mb-2 text-neutral-700 dark:text-neutral-200'/></Link>
+            </div>
             <p className="text-sm text-secondary">{item.description}</p>
             <p className='italic pt-4 text-xs text-neutral-700 dark:text-neutral-400'>{item.skills.join(", ")}</p>
           </div>

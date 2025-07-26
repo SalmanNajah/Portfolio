@@ -28,7 +28,14 @@ const projects = [
         description: "Building a full-featured blog platform with markdown support and secure user authentication.",
         image: "/image2.png",
         skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"]
-    }
+    },
+    {
+        title: "Earn Easy",
+        description: "Earn Easy is a marketplace for students to buy, sell and rent things, conveniently!",
+        href: "https://github.com/so-sc/EarnEasy",
+        image: "/image1.png",
+        skills: ["React", "Node.js", "Express", "MongoDB"]
+    },
 ]
 
 const UpcomingProjects = ({ limit }: { limit?: number }) => {
