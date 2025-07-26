@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     siteName: "Salman Najah Portfolio",
     images: [
       {
-        url: "/avatar.png",
-        width: 512,
-        height: 512,
-        alt: "Salman Najah Avatar"
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Salman Najah Portfolio Open Graph Image"
       }
     ],
     locale: "en_US",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
     site: "@salmanxcodes",
     creator: "@salmanxcodes",
-    images: ["/avatar.png"]
+    images: ["/opengraph-image.png"]
   },
   alternates: {
     canonical: "https://salmannajah.me"
