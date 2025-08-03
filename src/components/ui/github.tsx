@@ -9,19 +9,21 @@ import { useTheme } from "next-themes";
 
 const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
   ssr: false,
-  loading: () => <div className="h-[159px] w-full" />,
+  loading: () => <div className="h-[170px] w-full animate-pulse" />,
 });
 
 type GithubGraphProps = {
     username: string;
     blockMargin?: number;
+    colorPallete?: string[];
 };
 
 const GithubGraph = ({
     username,
+    blockMargin,
 }: GithubGraphProps) => {
     const [totalCount, setTotalCount] = useState(0);
-    const { resolvedTheme } = useTheme(); 
+    const { resolvedTheme } = useTheme();
 
     const processContributions = useCallback((contributions: Activity[]) => {
         // Calculate total count after rendering
@@ -41,15 +43,22 @@ const GithubGraph = ({
             <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-y-1 border-color-new dark:border-color-new shadow-inset-all dark:shadow-inset-all">
                 <SideHeaders>GitHub Contributions</SideHeaders>
 
-                <Link href={"https://github.com/Salman-in"} target="_blank" className="flex justify-center pt-8 w-full">
-                    <div className="w-full flex justify-center">
-                        <div className="transform scale-75 sm:scale-90 md:scale-100 origin-center">
-                            <GitHubCalendar
-                                username={username}
-                                transformData={processContributions}
-                                totalCount={totalCount}
-                                colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-                            />
+                <Link 
+                    href={"https://github.com/Salman-in"} 
+                    target="_blank" 
+                    className="block pt-8 w-full"
+                >
+                    <div className="w-full overflow-x-auto overflow-y-visible">
+                        <div className="min-w-fit flex justify-center p-2">
+                            <div className="w-max">
+                                <GitHubCalendar
+                                    username={username}
+                                    transformData={processContributions}
+                                    totalCount={totalCount}
+                                    colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+                                    blockMargin={blockMargin}
+                                />
+                            </div>
                         </div>
                     </div>
                 </Link>
