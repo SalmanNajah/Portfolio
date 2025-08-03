@@ -1,11 +1,16 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
-
-import { Activity, ActivityCalendar } from "react-activity-calendar";
+import { useCallback, useState } from "react";
+import dynamic from 'next/dynamic';
+import { Activity } from 'react-github-calendar';
 import Container from "../container";
 import SideHeaders from "../sideheaders";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+
+const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
+  ssr: false,
+  loading: () => <div className="h-[159px] w-full" />,
+});
 
 type GithubGraphProps = {
     username: string;
@@ -17,53 +22,38 @@ const GithubGraph = ({
     username,
     blockMargin,
 }: GithubGraphProps) => {
-    const [contribution, setContribution] = useState<Activity[]>([]);
-    const [loading, setIsLoading] = useState<boolean>(true);
+    const [totalCount, setTotalCount] = useState(0);
     const { resolvedTheme } = useTheme(); 
 
-    const fetchData = useCallback(async () => {
-        try {
-            const contributions = await fetchContributionData(username);
-            setContribution(contributions);
-            console.log("COntri", contributions)
-        } catch (error) {
-            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-            throw Error(`Error fetching contribution data: ${errorMessage}`);
-        } finally {
-            setIsLoading(false);
-        }
-    }, [username]);
+    const processContributions = useCallback((contributions: Activity[]) => {
+        // Calculate total count after rendering
+        setTimeout(() => {
+            const total = contributions
+                .map((el) => el.count)
+                .reduce((acc, curr) => acc + curr, 0);
 
-    useEffect(() => {
-        fetchData();
-    }, [fetchData]);
+            setTotalCount(total);
+        }, 0);
 
-    const label = {
-        totalCount: `{{count}} contributions in the last year`,
-    };
+        return contributions;
+    }, []);
 
     return (
         <div>
             <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-y-1 border-color-new dark:border-color-new shadow-inset-all dark:shadow-inset-all">
                 <SideHeaders>GitHub Contributions</SideHeaders>
 
-                <Link href={"https://github.com/Salman-in"} target="_blank" className="flex justify-center pt-8">
-                    <ActivityCalendar
-                        data={contribution}
-                        maxLevel={4}
-                        blockMargin={blockMargin ?? 2}
-                        loading={loading}
-                        labels={label}
-                        colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-                        theme={{
-                            light: [
-                                "#ffffff", "#d9d9d9", "#b3b3b3", "#808080", "#404040"
-                            ],
-                            dark: [
-                                "#000000", "#2c2c2c", "#595959", "#a6a6a6", "#e0e0e0"
-                            ],
-                        }}
-                    />
+                <Link href={"https://github.com/Salman-in"} target="_blank" className="flex justify-center pt-8 w-full">
+                    <div className="w-full flex justify-center">
+                        <div className="transform scale-75 sm:scale-90 md:scale-100 origin-center">
+                            <GitHubCalendar
+                                username={username}
+                                transformData={processContributions}
+                                totalCount={totalCount}
+                                colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+                            />
+                        </div>
+                    </div>
                 </Link>
             </Container>
         </div>
@@ -71,16 +61,3 @@ const GithubGraph = ({
 };
 
 export default GithubGraph;
-
-async function fetchContributionData(username: string): Promise<Activity[]> {
-    const response = await fetch(`https://github.vineet.pro/api/${username}`);
-    const responseBody = await response.json();
-
-    if (!response.ok) {
-        throw Error("Erroring fetching contribution data");
-    }
-    return responseBody.data;
-}
-
-// SSR is disabled for this component because of the hydration issue with the ActivityCalendar component.
-// SSR Enabled solution is there in Urgent Bookmark(chrome) - implement that later if needed(By creating a server component for the graph and passing the data as props to the client component).
