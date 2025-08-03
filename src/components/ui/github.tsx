@@ -15,12 +15,10 @@ const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
 type GithubGraphProps = {
     username: string;
     blockMargin?: number;
-    colorPallete?: string[];
 };
 
 const GithubGraph = ({
     username,
-    blockMargin,
 }: GithubGraphProps) => {
     const [totalCount, setTotalCount] = useState(0);
     const { resolvedTheme } = useTheme(); 
