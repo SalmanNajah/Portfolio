@@ -12,7 +12,7 @@ export default function Home() {
       <ProjectHome />
       <UpcomingProjects limit={2} />
       <GithubWrapper />
-      <LandingBlogs />
+      {/* <LandingBlogs /> */}
       <ContactSection />
     </div>
   );

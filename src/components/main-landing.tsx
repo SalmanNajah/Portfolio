@@ -21,7 +21,7 @@ const MainLanding = () => {
           </Link>
         </motion.div>
         <div className="order-2 md:order-1 flex flex-col justify-center">
-          <div className='flex md:flex-row flex-col gap-2 md:gap-4'>
+          <div className='flex flex-col gap-2'>
             <motion.h1 initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
               whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -29,7 +29,10 @@ const MainLanding = () => {
               className="md:order-1 order-2 text-3xl md:text-5xl font-bold text-primary dark:text-white tracking-tight flex md:justify-self-start">
               Salman Najah
             </motion.h1>
-            <Designation designation="Full Stack Engineer" className='mt-2 md:mt-4 md:order-2 order-1 my-auto' />
+            <div className='flex flex-row gap-2 md:order-2 order-1'>
+              <Designation designation="OSS contributor" className='mt-2 md:mt-4 my-auto' />
+              <Designation designation="Web Developer" className='mt-2 md:mt-4 my-auto' />
+            </div>
           </div>
 
           <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: -20 }}

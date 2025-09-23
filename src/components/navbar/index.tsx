@@ -20,8 +20,8 @@ const Navbar = () => {
     { title: 'Home', href: '/' },
     { title: 'About', href: '/about' },
     { title: 'Projects', href: '/projects' },
-    { title: 'Blog', href: '/blog' },
-    { title: 'Resources', href: '/resources' }
+    // { title: 'Blog', href: '/blog' },
+    // { title: 'Resources', href: '/resources' } //temporarily disabled until its complete
   ]
 
   useEffect(() => {
