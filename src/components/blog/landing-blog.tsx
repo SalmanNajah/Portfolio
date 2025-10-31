@@ -9,8 +9,8 @@ const LandingBlogs = async () => {
   const latestBlogs = allBlogs.slice(0, 2);
   return (
     <div>
+      <SideHeaders>Some of my writings</SideHeaders>
       <Container className='min-h-full pb-6 md:pt-6 pt-3'>
-        <SideHeaders>Some of my writings</SideHeaders>
         <div className="flex flex-col gap-4 mt-4 md:mt-6">
           {latestBlogs.map((blog, idx) => (
             <Link key={idx} href={`/blog/${blog?.slug}`} className="bg-neutral-100 dark:bg-[#302730] p-4 rounded-lg hover:shadow-standard hover:scale-101 transition-all duration-100 ease-in-out border-1 border-neutral-300 dark:border-neutral-700">

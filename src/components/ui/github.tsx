@@ -41,9 +41,8 @@ const GithubGraph = ({
 
     return (
         <div>
-            <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-b-1 border-color-new dark:border-color-new">
-                <SideHeaders>Proof of work</SideHeaders>
-
+            <SideHeaders>Proof of work</SideHeaders>
+            <Container className="md:pb-12 pb-6 md:pt-6 pt-3">
                 <Link
                     href={"https://github.com/Salman-in"}
                     target="_blank"

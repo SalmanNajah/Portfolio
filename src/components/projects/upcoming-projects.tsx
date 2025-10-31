@@ -42,29 +42,27 @@ const UpcomingProjects = ({ limit }: { limit?: number }) => {
     const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
     return (
-        <Container className='pt-4 pb-8'>
-            <div>
-                <SideHeaders>
-                    Upcoming works
-                </SideHeaders>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                {displayedProjects.map((item, idx) => (
-                    <motion.div
-                        key={idx}
-                        className="bg-white dark:bg-[#1b1b1a] p-2 rounded-lg shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
-                        initial={{ opacity: 0, filter: "blur(6px)", y: 10 }}
-                        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                        transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
-                    >
-                        <div className="mx-auto px-4 pb-2">
-                            <h2 className="text-xl font-semibold my-2">{item.title}</h2>
-                            <p className="text-sm text-secondary">{item.description}</p>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
-        </Container>
+        <div>
+            <SideHeaders>Upcoming works</SideHeaders>
+            <Container className='pt-4 pb-8'>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    {displayedProjects.map((item, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="bg-white dark:bg-[#1b1b1a] p-2 rounded-lg shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
+                            initial={{ opacity: 0, filter: "blur(6px)", y: 10 }}
+                            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                            transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
+                        >
+                            <div className="mx-auto px-4 pb-2">
+                                <h2 className="text-xl font-semibold my-2">{item.title}</h2>
+                                <p className="text-sm text-secondary">{item.description}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </Container>
+        </div>
     );
 };
 
