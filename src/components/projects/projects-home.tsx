@@ -9,9 +9,7 @@ const ProjectHome = () => {
   return (
     <div>
       <Container className="md:pt-6 pt-3 border-b border-color-new dark:border-color-new md:pb-8 pb-6 ">
-        <SideHeaders>
-          Proof of Work
-        </SideHeaders>
+        <SideHeaders>Projects</SideHeaders>
         <ProjectContent limit={4}/>
         <div className="mt-6 flex justify-start pl-1">
           <Link href="/projects" className="text-sm text-neutral-600 dark:text-neutral-300 underline hover:no-underline transition">
