@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { IconGitMerge } from "@tabler/icons-react";
+import { IconArrowDown, IconArrowUp, IconGitMerge } from "@tabler/icons-react";
 
 type PR = {
   id: number;
@@ -22,17 +22,17 @@ type SearchIssue = {
 export const PullRequests = ({ username = "Salman-in" }: { username?: string }) => {
   const [prs, setPrs] = useState<PR[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const fetchPRs = async () => {
       const q = `is:pr author:${username} is:merged`;
-      const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=40`;
+  // fetch more items so we can show 10 initially and reveal the rest on demand
+  const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=50`;
 
       try {
         const res = await fetch(url);
         const data = await res.json();
-
-        console.log(data.items);
 
         const items = (data.items || []).map((it: SearchIssue) => ({
           id: it.id,
@@ -59,8 +59,9 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
       {loading ? (
         <p className="text-sm text-muted pt-2">Loading…</p>
       ) : (
-        <ul className="mt-3 space-y-3">
-          {prs.map((pr) => (
+        <>
+          <ul className="mt-3 space-y-3">
+            {(showAll ? prs : prs.slice(0, 10)).map((pr) => (
             <li
               key={pr.id}
               className="bg-neutral-50 dark:bg-[#1b1b1a] p-3 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)] transition-all"
@@ -75,8 +76,21 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
                 </span>
               </Link>
             </li>
-          ))}
-        </ul>
+            ))}
+          </ul>
+
+          {prs.length > 10 && (
+            <div className="mt-6 flex justify-start cursor-pointer">
+              <button
+                type="button"
+                onClick={() => setShowAll((s) => !s)}
+                className="text-sm text-secondary dark:text-secondary underline flex items-center cursor-pointer"
+              >
+                {showAll ? <><span>See less</span> <IconArrowUp className="w-4" /></> : <><span>See more ({prs.length})</span> <IconArrowDown className="w-4" /></>}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
