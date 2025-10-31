@@ -23,6 +23,7 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
   const [prs, setPrs] = useState<PR[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
+  const showPRs = 5;
 
   useEffect(() => {
     const fetchPRs = async () => {
@@ -61,14 +62,14 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
       ) : (
         <>
           <ul className="mt-3 space-y-3">
-            {(showAll ? prs : prs.slice(0, 10)).map((pr) => (
+            {(showAll ? prs : prs.slice(0, showPRs)).map((pr) => (
             <li
               key={pr.id}
               className="bg-neutral-50 dark:bg-[#1b1b1a] p-3 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)] transition-all"
             >
               <Link href={pr.url} target="_blank" className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <IconGitMerge stroke={2} color="#aa7df8" />
+                  <IconGitMerge stroke={2} color="#aa7df8" className="w-5 h-5 flex-shrink-0 mt-0.5"/>
                   <span className="text-sm text-gray-800 dark:text-gray-200">{pr.title}</span>
                 </div>
                 <span className="text-xs hidden sm:block text-gray-500 dark:text-gray-400">
@@ -79,14 +80,14 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
             ))}
           </ul>
 
-          {prs.length > 10 && (
+          {prs.length > 5 && (
             <div className="mt-6 flex justify-start cursor-pointer">
               <button
                 type="button"
                 onClick={() => setShowAll((s) => !s)}
                 className="text-sm text-secondary dark:text-secondary underline flex items-center cursor-pointer"
               >
-                {showAll ? <><span>See less</span> <IconArrowUp className="w-4" /></> : <><span>See more ({prs.length})</span> <IconArrowDown className="w-4" /></>}
+                {showAll ? <><span>See less</span> <IconArrowUp className="w-4" /></> : <><span>See more ({prs.length - showPRs})</span> <IconArrowDown className="w-4" /></>}
               </button>
             </div>
           )}
