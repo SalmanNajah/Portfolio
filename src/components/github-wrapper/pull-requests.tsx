@@ -22,7 +22,7 @@ type SearchIssue = {
 
 export function SkeletonDemo() {
     return (
-        <div className="flex flex-col mt-3 items-center space-y-4">
+        <div className="flex flex-col mt-3 items-center space-y-3">
             <Skeleton className="h-12 w-full" />
             <Skeleton className="h-12 w-full" />
             <Skeleton className="h-12 w-full" />

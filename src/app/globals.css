@@ -34,7 +34,7 @@
   --color-primary: var(--color-neutral-100);
   --color-secondary: var(--color-neutral-300);
   --color-border: var(--color-neutral-800);
-  --color-skeleton: var(--color-neutral-700);
+  --color-skeleton: var(--color-neutral-800);
 
   --shadow-standard: 0px 2px 3px -1px rgba(200, 200, 200, 0.05),
     0px 1px 0px 0px rgba(200, 200, 200, 0.03),
