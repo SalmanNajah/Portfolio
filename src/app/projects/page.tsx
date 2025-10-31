@@ -1,7 +1,7 @@
 "use client"
 import Container from '@/components/container'
 import ProjectContent from '@/components/projects/project-content';
-import UpcomingProjects from '@/components/projects/upcoming-projects';
+// import UpcomingProjects from '@/components/projects/upcoming-projects';
 
 const Projects = () => {
   return (
@@ -12,7 +12,7 @@ const Projects = () => {
         </h1>
         <ProjectContent />
       </Container>
-      <UpcomingProjects />
+      {/* <UpcomingProjects /> */}
     </div>
   );
 }

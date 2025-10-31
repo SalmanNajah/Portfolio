@@ -2,7 +2,7 @@
 import GithubWrapper from "@/components/github-wrapper/github-wrapper";
 import MainLanding from "@/components/main-landing";
 import ProjectHome from "@/components/projects/projects-home";
-import UpcomingProjects from "@/components/projects/upcoming-projects";
+// import UpcomingProjects from "@/components/projects/upcoming-projects";
 import ContactSection from "@/components/contact/contact-section";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <MainLanding />
       <GithubWrapper />
       <ProjectHome />
-      <UpcomingProjects limit={2} />
+      {/* <UpcomingProjects limit={2} /> */}
       {/* <LandingBlogs /> */}
       <ContactSection />
     </div>

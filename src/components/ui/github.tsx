@@ -40,7 +40,7 @@ const GithubGraph = ({
 
     return (
         <div>
-            <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-y-1 border-color-new dark:border-color-new">
+            <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-b-1 border-color-new dark:border-color-new">
                 <SideHeaders>Proof of work</SideHeaders>
 
                 <Link 
