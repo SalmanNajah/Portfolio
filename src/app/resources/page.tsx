@@ -18,7 +18,7 @@ export default async function AllBlogsPage() {
                 </h1>
                 <p className="text-neutral-500 dark:text-neutral-400 pt-4 text-sm md:text-base">Some of the resources I used and are helpful for learning and building things.</p>
             </Container>
-            <Container className="min-h-[50vh] shadow-inset-all dark:shadow-inset-all">
+            <Container className="min-h-[50vh] ">
                 coming soon!!!
             </Container>
         </div>

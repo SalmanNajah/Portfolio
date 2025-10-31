@@ -8,7 +8,7 @@ import { Link } from 'next-view-transitions'
 const ProjectHome = () => {
   return (
     <div>
-      <Container className="md:pt-6 pt-3 border-b border-color-new dark:border-color-new md:pb-8 pb-6 shadow-inset-all dark:shadow-inset-all">
+      <Container className="md:pt-6 pt-3 border-b border-color-new dark:border-color-new md:pb-8 pb-6 ">
         <SideHeaders>
           Proof of Work
         </SideHeaders>
