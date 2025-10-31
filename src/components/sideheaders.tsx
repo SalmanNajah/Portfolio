@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import { motion } from 'motion/react'
 import { cn } from '@/lib/utils';
 
 const SideHeaders = ({ children, className }: { children: React.ReactNode, className?: string }) => {
