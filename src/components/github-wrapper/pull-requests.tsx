@@ -11,6 +11,14 @@ type PR = {
   number: number;
 };
 
+type SearchIssue = {
+  id: number;
+  title: string;
+  html_url: string;
+  repository_url?: string;
+  number: number;
+};
+
 export const PullRequests = ({ username = "Salman-in" }: { username?: string }) => {
   const [prs, setPrs] = useState<PR[]>([]);
   const [loading, setLoading] = useState(true);
@@ -18,13 +26,15 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
   useEffect(() => {
     const fetchPRs = async () => {
       const q = `is:pr author:${username} is:merged`;
-      const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=15`;
+      const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=40`;
 
       try {
         const res = await fetch(url);
         const data = await res.json();
 
-        const items = (data.items || []).map((it: any) => ({
+        console.log(data.items);
+
+        const items = (data.items || []).map((it: SearchIssue) => ({
           id: it.id,
           title: it.title,
           url: it.html_url,
@@ -48,8 +58,6 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
       <h2 className="text-md font-bold">Merged PRs</h2>
       {loading ? (
         <p className="text-sm text-muted pt-2">Loading…</p>
-      ) : prs.length === 0 ? (
-        <p className="text-sm text-gray-500 pt-2">No merged PRs found.</p>
       ) : (
         <ul className="mt-3 space-y-3">
           {prs.map((pr) => (
