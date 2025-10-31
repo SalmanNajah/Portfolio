@@ -6,10 +6,11 @@ import Container from "../container";
 import SideHeaders from "../sideheaders";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { PullRequests } from "../github-wrapper/pull-requests";
 
 const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
-  ssr: false,
-  loading: () => <div className="h-[170px] w-full animate-pulse" />,
+    ssr: false,
+    loading: () => <div className="h-[170px] w-full animate-pulse" />,
 });
 
 type GithubGraphProps = {
@@ -43,9 +44,9 @@ const GithubGraph = ({
             <Container className="md:pb-12 pb-6 md:pt-6 pt-3 border-b-1 border-color-new dark:border-color-new">
                 <SideHeaders>Proof of work</SideHeaders>
 
-                <Link 
-                    href={"https://github.com/Salman-in"} 
-                    target="_blank" 
+                <Link
+                    href={"https://github.com/Salman-in"}
+                    target="_blank"
                     className="block pt-8 w-full"
                 >
                     <div className="w-full overflow-x-auto overflow-y-visible">
@@ -62,6 +63,8 @@ const GithubGraph = ({
                         </div>
                     </div>
                 </Link>
+
+                <PullRequests />
             </Container>
         </div>
     );
