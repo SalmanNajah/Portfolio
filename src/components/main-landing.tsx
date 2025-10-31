@@ -30,7 +30,7 @@ const MainLanding = () => {
               Salman Najah
             </motion.h1>
             <div className='flex flex-row gap-2 md:order-2 order-1'>
-              <Designation designation="OSS contributor" className='mt-2 md:mt-4 my-auto' />
+              <Designation designation="OSS Contributor" className='mt-2 md:mt-4 my-auto' />
               <Designation designation="Web Developer" className='mt-2 md:mt-4 my-auto' />
             </div>
           </div>
