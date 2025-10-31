@@ -18,20 +18,20 @@ const projects = [
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
   {
-    title: "BrainSpace",
-    description: "A app to store all your extra information in one place, like a digital brain.",
-    sourcecode: "https://github.com/salman-in/brainspace",
-    href: "https://brainspace.salmannajah.me",
-    image: "/brainspace.png",
-    skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
-  },
-  {
     title: "Hume AI",
     description: "hume ai is an AI text humanizer that makes your AI-generated content undetectable and professionally polished.",
     sourcecode: "https://github.com/salman-in/hume-ai",
     href: "https://humeai.salmannajah.me",
     image: "/humeai.png",
     skills: ["NextJS", "TypeScript", "Gemini API", "Tailwind CSS", "PostgreSQL", "Prisma"]
+  },
+  {
+    title: "BrainSpace",
+    description: "A app to store all your extra information in one place, like a digital brain.",
+    sourcecode: "https://github.com/salman-in/brainspace",
+    href: "https://brainspace.salmannajah.me",
+    image: "/brainspace.png",
+    skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
   },
   {
     title: "Snippets",
