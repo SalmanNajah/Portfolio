@@ -69,7 +69,7 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
 
     return (
         <div className="px-2 pt-4">
-            <h2 className="text-md font-bold">Merged PRs</h2>
+            <h2 className="text-md font-bold text-neutral-600">Merged PRs</h2>
             {loading ? (
                 <SkeletonDemo />
             ) : (
@@ -80,12 +80,12 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
                                     key={pr.id}
                                     className="bg-neutral-50 dark:bg-[#1b1b1a] p-3 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)] transition-all"
                                 >
-                                    <Link href={pr.url} target="_blank" className="flex items-center justify-between">
+                                    <Link href={pr.url} target="_blank" className="flex flex-col md:flex-row justify-between">
                                         <div className="flex items-center gap-3">
                                             <IconGitMerge stroke={2} color="#aa7df8" className="w-5 h-5 flex-shrink-0 mt-0.5" />
                                             <span className="text-sm text-gray-800 dark:text-gray-200">{pr.title}</span>
                                         </div>
-                                        <span className="text-xs hidden sm:block text-gray-500 dark:text-gray-400">
+                                        <span className="text-xs text-gray-400 dark:text-gray-500 pl-8">
                                             {pr.repo} #{pr.number}
                                         </span>
                                     </Link>
