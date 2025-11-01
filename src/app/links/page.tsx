@@ -11,7 +11,7 @@ const links = [
     },
     {
         title: "Twitter",
-        url: "https://twitter.com/salmancodess",
+        url: "https://twitter.com/salmanxcodes",
         icon: IconBrandTwitter,
     },
     {
