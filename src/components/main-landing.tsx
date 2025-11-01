@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Designation from './designation';
-import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 
 const ibmPlex = IBM_Plex_Mono({
   subsets: ["latin"],
