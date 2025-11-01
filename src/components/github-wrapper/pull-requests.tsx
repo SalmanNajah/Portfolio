@@ -69,7 +69,7 @@ export const PullRequests = ({ username = "Salman-in" }: { username?: string }) 
 
     return (
         <div className="px-2 pt-4">
-            <h2 className="text-md font-bold text-neutral-600">Merged PRs</h2>
+            <h2 className="text-md font-bold text-neutral-600 dark:text-neutral-200">Merged PRs</h2>
             {loading ? (
                 <SkeletonDemo />
             ) : (
