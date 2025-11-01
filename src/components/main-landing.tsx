@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Designation from './designation';
 import { IBM_Plex_Mono } from 'next/font/google'
+import { CornerArtifacts } from './ui/corner-artifacts';
 
 const ibmPlex = IBM_Plex_Mono({
   subsets: ["latin"],
