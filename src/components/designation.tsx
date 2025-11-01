@@ -24,7 +24,7 @@ const itemVariants = {
 const Designation = ({ designation, className }: ContainerProps) => {
   return (
     <motion.div
-      className={cn("text-sm shadow-derek dark:shadow-[var(--shadow-derek)] px-2 py-0.5 rounded w-fit text-neutral-500", className)}
+      className={cn("text-sm border-1 border-dashed border-neutral-200 dark:border-neutral-700 bg-side-header px-2 py-0.5 w-fit text-neutral-500 dark:text-neutral-300", className)}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
