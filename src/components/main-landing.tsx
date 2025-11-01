@@ -18,14 +18,15 @@ const MainLanding = () => {
     <div>
       <Container className='pt-30'>
         <div className="z-10 relative min-h-full flex flex-col md:flex-row md:justify-between pb-8">
+          <div className={`md:hidden text-xs flex justify-end items-end pr-2 text-secondary ${ibmPlex.className}`}>flex justify-start</div>
           <motion.div
-            className="order-1 md:order-2 mb-4 md:mb-0 flex justify-start md:justify-start"
+            className="order-1 md:order-2 mb-4 md:mb-0 flex bg-[repeating-linear-gradient(45deg,_#d4d4d4_0,_#d4d4d4_1px,_transparent_1px,_transparent_5px)] dark:bg-[repeating-linear-gradient(45deg,_#404040_0,_#404040_1px,_transparent_1px,_transparent_5px)] border-1 border-color-new"
             initial={{ opacity: 0, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            <Link href="/" className='p-2 border-1 border-color-new bg-side-header'>
+            <Link href="/" className='p-2 border-r-1 border-color-new bg-side-header'>
               <Image src="/avatar.png" alt="Logo" width={150} height={150} className="rounded-xl object-cover border-secondary border w-32 h-32 md:w-48 md:h-48" />
             </Link>
           </motion.div>
@@ -40,7 +41,7 @@ const MainLanding = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true, amount: 0.1 }}
                   className="md:order-1 order-2 text-3xl md:text-5xl font-semibold text-primary dark:text-white tracking-tighter flex md:justify-self-start border-1 border-dashed border-color-new mx-auto w-full track">
-                  Salman Najah
+                  Salman Najah.
                   <CornerArtifacts />
                 </motion.h1>
               </div>
