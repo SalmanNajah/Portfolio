@@ -26,7 +26,7 @@ const MainLanding = () => {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            <Link href="/" className='p-2 border-r-1 border-color-new bg-side-header'>
+            <Link href="/" className='p-2 border-r-1 md:border-0 border-color-new bg-side-header'>
               <Image src="/avatar.png" alt="Logo" width={150} height={150} className="rounded-xl object-cover border-secondary border w-32 h-32 md:w-48 md:h-48" />
             </Link>
           </motion.div>

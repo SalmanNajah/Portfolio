@@ -26,9 +26,11 @@ const Footer = () => {
                         <li><Link href="https://medium.com/@salmannajah123" className="hover:text-neutral-800 dark:hover:text-neutral-300">Medium</Link></li>
                     </ul>
                 </div>
-                <div className='text-sm'>
-                    Designed and Developed by <Link href="/"><span className='font-bold'>Salman Najah</span></Link>
+                <div className='flex flex-col md:flex-row justify-between'>
+                <div className='text-sm'>Designed and Developed by <Link href="/"><span className='font-bold'>Salman Najah</span></Link></div>
+                <div className='text-xs md:text-sm'>Portfolio inspired by <Link href="https://tailwindcss.com/"><span className='font-bold'>Tailwind CSS</span></Link></div>
                 </div>
+
             </Container>
         </footer>
     )
