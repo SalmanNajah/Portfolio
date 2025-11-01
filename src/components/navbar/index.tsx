@@ -58,7 +58,7 @@ const Navbar = () => {
             className="hidden max-w-lg z-50 fixed md:inset-x-0 md:top-0 md:max-w-4xl md:mx-auto md:flex items-center justify-between md:py-3 rounded-full px-4 mt-2 backdrop-blur-md bg-white/30 dark:bg-neutral-900/30"
             animate={{
               boxShadow: scrolled ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset" : "none",
-              width: scrolled ? "47%" : "52%",
+              width: scrolled ? "30%" : "60%",
               y: scrolled ? 7 : 0,
               borderRadius: scrolled ? "5rem" : "2rem",
             }}
