@@ -18,7 +18,7 @@ export default async function AboutPage() {
                 </h1>
                 <div className="md:justify-between mt-6 md:flex ">
                     <p className="text-neutral-500 md:text-base max-w-[40rem] pb-4 text-base">
-                        I’m a second-year engineering student deeply interested in building for the web.
+                        I’m an engineering student deeply interested in building for the web.
                         I love exploring the full stack - especially how systems work behind the scenes.
                         Most of what I’ve learned comes from trying, failing, and building again.
                         Lately, I’ve been curious about how AI can intersect with the web to create meaningful tools.
