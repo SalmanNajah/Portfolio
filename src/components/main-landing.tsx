@@ -20,7 +20,7 @@ const MainLanding = () => {
         <div className="z-10 relative min-h-full flex flex-col md:flex-row md:justify-between pb-8">
           <div className={`md:hidden text-xs flex justify-end items-end pr-2 text-secondary ${ibmPlex.className}`}>flex justify-start</div>
           <motion.div
-            className="order-1 md:order-2 mb-4 md:mb-0 flex bg-[repeating-linear-gradient(45deg,_#d4d4d4_0,_#d4d4d4_1px,_transparent_1px,_transparent_5px)] dark:bg-[repeating-linear-gradient(45deg,_#404040_0,_#404040_1px,_transparent_1px,_transparent_5px)] border-1 border-color-new"
+            className="order-1 md:order-2 mb-4 md:mb-0 flex bg-[repeating-linear-gradient(45deg,_#d4d4d4_0,_#d4d4d4_1px,_transparent_1px,_transparent_5px)] dark:bg-[repeating-linear-gradient(45deg,_#262626_0,_#262626_1px,_transparent_1px,_transparent_5px)] border-1 border-color-new"
             initial={{ opacity: 0, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.1 }}
