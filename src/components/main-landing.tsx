@@ -40,17 +40,7 @@ const MainLanding = () => {
                   viewport={{ once: true, amount: 0.1 }}
                   className="md:order-1 order-2 text-3xl md:text-5xl font-semibold text-primary dark:text-white tracking-tighter flex md:justify-self-start border-1 border-dashed border-color-new mx-auto w-full track">
                   Salman Najah
-                  <span className="absolute top-0 left-0 w-2 h-px bg-neutral-200 dark:bg-neutral-800 -translate-x-2"></span>
-                  <span className="absolute top-0 left-0 h-2 w-px bg-neutral-200 dark:bg-neutral-800 -translate-y-2"></span>
-
-                  <span className="absolute top-0 right-0 w-2 h-px bg-neutral-200 dark:bg-neutral-800 translate-x-2"></span>
-                  <span className="absolute top-0 right-0 h-2 w-px bg-neutral-200 dark:bg-neutral-800 -translate-y-2"></span>
-
-                  <span className="absolute bottom-0 left-0 w-2 h-px bg-neutral-200 dark:bg-neutral-800 -translate-x-2"></span>
-                  <span className="absolute bottom-0 left-0 h-2 w-px bg-neutral-200 dark:bg-neutral-800 translate-y-2"></span>
-
-                  <span className="absolute bottom-0 right-0 w-2 h-px bg-neutral-200 dark:bg-neutral-800 translate-x-2"></span>
-                  <span className="absolute bottom-0 right-0 h-2 w-px bg-neutral-200 dark:bg-neutral-800 translate-y-2"></span>
+                  <CornerArtifacts />
                 </motion.h1>
               </div>
               <div className='flex flex-row gap-2 md:order-2 order-1 my-2 md:mt-4'>
