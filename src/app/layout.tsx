@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "TypeScript",
     "UI/UX",
-    "Personal Website",
+    "Personal Website"
   ],
   metadataBase: new URL("https://salmannajah.me"),
   openGraph: {
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     siteName: "Salman Najah Portfolio",
     images: [
       {
-        url: "https://salmannajah.me/opengraph-image.png?v=3",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Salman Najah Portfolio Open Graph Image",
-      },
+        alt: "Salman Najah Portfolio Open Graph Image"
+      }
     ],
     locale: "en_US",
-    type: "website",
+    type: "website"
   },
   twitter: {
     card: "summary_large_image",
@@ -55,11 +55,11 @@ export const metadata: Metadata = {
     description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
     site: "@salmanxcodes",
     creator: "@salmanxcodes",
-    images: ["https://salmannajah.me/opengraph-image.png?v=3"],
+    images: ["/opengraph-image.png"]
   },
   alternates: {
-    canonical: "https://salmannajah.me",
-  },
+    canonical: "https://salmannajah.me"
+  }
 };
 
 export default function RootLayout({
