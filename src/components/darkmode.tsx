@@ -4,7 +4,6 @@ import { IconMoon, IconSun } from '@tabler/icons-react'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { useTheme } from 'next-themes'
-import { set } from 'zod'
 
 const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme()
