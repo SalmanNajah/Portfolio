@@ -13,7 +13,7 @@ const projects = [
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
     sourcecode: "https://github.com/salman-in/portfolio",
-    href: "https://salmannajah.me",
+    href: "https://template.salmannajah.me",
     image: "/portfolio.png",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
