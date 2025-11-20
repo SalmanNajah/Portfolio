@@ -4,29 +4,34 @@ import { IconMoon, IconSun } from '@tabler/icons-react'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { useTheme } from 'next-themes'
+import { set } from 'zod'
 
 const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [rotation, setRotation] = useState(0)
+  const [wobble, setWobble] = useState(0)
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null 
+  if (!mounted) return null;
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-    setRotation((prev) => prev + 90)
+    setWobble(prev => prev + 1)
+    new Audio('/click.mp3').play()
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2 transition-all duration-300 ease-in-out hover:scale-105"
+      className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2 transition-all duration-300 ease-in-out hover:scale-103"
       aria-label="Toggle dark mode"
     >
       <motion.div
-        animate={{ rotate: rotation }}
-        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        key={wobble}
+        initial={{ rotate: 10 }}
+        animate={{ rotate: -10 }}
+        transition={{ duration: 0.25, type: 'spring', stiffness: 300 }}
         className="flex items-center justify-center"
       >
         {resolvedTheme === 'dark' ? (
