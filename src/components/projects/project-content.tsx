@@ -51,7 +51,7 @@ const ProjectContent = ({ limit }: { limit?: number }) => {
       {displayedProjects.map((item, idx) => (
         <motion.div
           key={idx}
-          className="bg-white dark:bg-[#1b1b1a] p-2 rounded-lg shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
+          className="bg-white dark:bg-[#1b1b1a] p-2 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
           initial={{ opacity: 0, filter: "blur(6px)", y: 10 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
