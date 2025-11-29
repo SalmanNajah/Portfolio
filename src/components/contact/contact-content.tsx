@@ -46,7 +46,7 @@ export default function ContactContent() {
         href="https://twitter.com/salmanxcodes"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 px-4 mb-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md shadow hover:opacity-90 transition"
+        className="flex items-center justify-center gap-2 px-4 mb-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md shadow hover:opacity-90 transition"
       >
         <IconBrandX className="w-4 h-4" />
         DM me
