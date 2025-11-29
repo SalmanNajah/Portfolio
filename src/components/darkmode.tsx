@@ -17,7 +17,9 @@ const DarkModeToggle = () => {
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
     setWobble(prev => prev + 1)
-    new Audio('/click.mp3').play()
+    const audio = new Audio("/click.mp3");
+    audio.volume = 0.5;
+    audio.play();
   }
 
   return (
