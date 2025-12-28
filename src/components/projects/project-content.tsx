@@ -12,7 +12,7 @@ const projects = [
   {
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
-    sourcecode: "https://github.com/salman-in/portfolio",
+    sourcecode: "https://github.com/salmannajah/portfolio",
     href: "https://template.salmannajah.me",
     image: "/portfolio.png",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Hume AI",
     description: "hume ai is an AI text humanizer that makes your AI-generated content undetectable and professionally polished.",
-    sourcecode: "https://github.com/salman-in/hume-ai",
+    sourcecode: "https://github.com/salmannajah/hume-ai",
     href: "https://humeai.salmannajah.me",
     image: "/humeai.png",
     skills: ["NextJS", "TypeScript", "Gemini API", "Tailwind CSS", "PostgreSQL", "Prisma"]
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "BrainSpace",
     description: "A app to store all your extra information in one place, like a digital brain.",
-    sourcecode: "https://github.com/salman-in/brainspace",
+    sourcecode: "https://github.com/salmannajah/brainspace",
     href: "https://brainspace.salmannajah.me",
     image: "/brainspace.png",
     skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "Snippets",
     description: "A web app to save and organize your favorite code snippets.",
-    sourcecode: "https://github.com/salman-in/snippet-app",
+    sourcecode: "https://github.com/salmannajah/snippet-app",
     href: "https://snippet-app-two.vercel.app/",
     image: "/snippets.png",
     skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
