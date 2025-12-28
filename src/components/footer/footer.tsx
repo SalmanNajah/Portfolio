@@ -14,10 +14,9 @@ const Footer = () => {
                         <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
-                        <li><a href="https://github.com/Salman-in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</a></li>
-                        <li><a href="https://twitter.com/salmanxcodes" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</a></li>
+                        <li><a href="https://github.com/SalmanNajah" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">GitHub</a></li>
+                        <li><a href="https://twitter.com/slmntwt" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Twitter</a></li>
                         <li><a href="https://linkedin.com/in/salman-najah" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">LinkedIn</a></li>
-                        {/* <li><a href="https://instagram.com/salmaan.in" className="hover:text-neutral-800 dark:hover:text-neutral-300" target="_blank" rel="noreferrer">Instagram</a></li> */}
                     </ul>
                     {/* <ul className="list-none space-y-3">
                         <li><Link href="/contact" className="hover:text-neutral-800 dark:hover:text-neutral-300">Contact</Link></li>

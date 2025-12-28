@@ -32,7 +32,7 @@ export function SkeletonDemo() {
     )
 }
 
-export const PullRequests = ({ username = "Salman-in" }: { username?: string }) => {
+export const PullRequests = ({ username = "SalmanNajah" }: { username?: string }) => {
     const [prs, setPrs] = useState<PR[]>([]);
     const [loading, setLoading] = useState(true);
     const [showAll, setShowAll] = useState(false);

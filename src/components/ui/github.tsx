@@ -44,7 +44,7 @@ const GithubGraph = ({
             <SideHeaders>Proof of work</SideHeaders>
             <Container className="pb-6 pt-3">
                 <Link
-                    href={"https://github.com/Salman-in"}
+                    href={"https://github.com/SalmanNajah"}
                     target="_blank"
                     className="block pt-8 w-full"
                 >

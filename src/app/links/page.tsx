@@ -11,12 +11,12 @@ const links = [
     },
     {
         title: "Twitter",
-        url: "https://twitter.com/salmanxcodes",
+        url: "https://twitter.com/slmntwt",
         icon: IconBrandTwitter,
     },
     {
         title: "GitHub",
-        url: "https://github.com/Salman-in",
+        url: "https://github.com/SalmanNajah",
         icon: IconBrandGithub,
     },
     {
