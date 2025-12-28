@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Salman Najah | Portfolio",
     description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
-    site: "@salmanxcodes",
-    creator: "@salmanxcodes",
+    site: "@slmntwt",
+    creator: "@slmntwt",
     images: ["/opengraph-image-v2.png"]
   },
   alternates: {

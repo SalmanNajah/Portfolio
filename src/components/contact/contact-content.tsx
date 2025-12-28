@@ -43,7 +43,7 @@ export default function ContactContent() {
   return (
     <div className="w-full max-w-xl space-y-3 px-2">
       <a
-        href="https://twitter.com/salmanxcodes"
+        href="https://twitter.com/slmntwt"
         target="_blank"
         rel="noopener noreferrer"
         className="md:inline-flex flex items-center justify-center gap-2 px-4 mb-4 py-2 text-sm font-medium text-white bg-black dark:bg-white dark:text-black rounded-md shadow hover:opacity-90 transition"
