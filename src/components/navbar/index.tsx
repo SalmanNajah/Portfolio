@@ -37,7 +37,7 @@ const Navbar = () => {
       <Container>
         {!isOpen && (
           <motion.div
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 md:hidden flex justify-between items-center px-4 backdrop-blur-md bg-white/10 dark:bg-neutral-900/10 p-3 rounded-2xl"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 md:hidden flex justify-between items-center px-4 backdrop-blur-md bg-white/10 dark:bg-neutral-900/10 p-3 rounded-full"
             initial={{ boxShadow: "none", width: "100%", y: 0 }}
             animate={{
               boxShadow: scrolled ? "var(--shadow-derek)" : "none",
