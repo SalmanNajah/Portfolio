@@ -1,3 +1,2 @@
-Personal portfolio of Salman Najah
+My simple portfolio website, basically my small house on the internet.
 
-Live: [salmannajah.me](https://salmannajah.me)
