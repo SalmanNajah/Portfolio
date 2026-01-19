@@ -7,7 +7,7 @@ const navItems = [
   { title: 'Projects', href: '/projects' },
   // { title: 'Blog', href: '/blog' },
   // { title: 'Resources', href: '/resources' },
-  { title: 'Contact', href: '/contact' }
+  // { title: 'Contact', href: '/contact' }
 ];
 
 const MobileNavbar = ({ setIsOpen }: { setIsOpen?: (v: boolean) => void }) => (
