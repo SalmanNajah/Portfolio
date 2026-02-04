@@ -56,7 +56,7 @@ const MainLanding = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true, amount: 0.1 }}
               className="text-neutral-500 md:text-base pt-4 max-w-90 flex justify-self-start md:max-w-lg">
-              I’m 21. I tinker with code, break stuff more than I should, and learn by putting it back together.
+              I build things for the web, ship often, and learn something new every day.
             </motion.p>
           </div>
         </div>
