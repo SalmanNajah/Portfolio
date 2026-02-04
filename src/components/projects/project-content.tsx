@@ -13,7 +13,7 @@ const projects = [
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
     sourcecode: "https://github.com/salmannajah/portfolio",
-    href: "https://template.salmannajah.me",
+    href: "https://template.salmannajah.dev",
     image: "/portfolio.png",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
@@ -21,7 +21,7 @@ const projects = [
     title: "Hume AI",
     description: "hume ai is an AI text humanizer that makes your AI-generated content undetectable and professionally polished.",
     sourcecode: "https://github.com/salmannajah/hume-ai",
-    href: "https://humeai.salmannajah.me",
+    href: "https://humeai.salmannajah.dev",
     image: "/humeai.png",
     skills: ["NextJS", "TypeScript", "Gemini API", "Tailwind CSS", "PostgreSQL", "Prisma"]
   },
@@ -29,7 +29,7 @@ const projects = [
     title: "BrainSpace",
     description: "A app to store all your extra information in one place, like a digital brain.",
     sourcecode: "https://github.com/salmannajah/brainspace",
-    href: "https://brainspace.salmannajah.me",
+    href: "https://brainspace.salmannajah.dev",
     image: "/brainspace.png",
     skills: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma"]
   },

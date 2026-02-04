@@ -6,7 +6,7 @@ import React from 'react';
 const links = [
     {
         title: "Website",
-        url: "https://salmannajah.me",
+        url: "https://salmannajah.dev",
         icon: IconBrandNextjs,
     },
     {

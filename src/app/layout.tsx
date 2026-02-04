@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "UI/UX",
     "Personal Website"
   ],
-  metadataBase: new URL("https://salmannajah.me"),
+  metadataBase: new URL("https://salmannajah.dev"),
   openGraph: {
     title: "Salman Najah | Portfolio",
     description: "Portfolio of Salman Najah, a web developer and software engineer specializing in Next.js, React, and modern web technologies.",
-    url: "https://salmannajah.me",
+    url: "https://salmannajah.dev",
     siteName: "Salman Najah Portfolio",
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image-v2.png"]
   },
   alternates: {
-    canonical: "https://salmannajah.me"
+    canonical: "https://salmannajah.dev"
   }
 };
 
