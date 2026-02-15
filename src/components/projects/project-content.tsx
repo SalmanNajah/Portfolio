@@ -64,7 +64,8 @@ const ProjectContent = ({ limit }: { limit?: number }) => {
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
         >
-          <Link href={item.href}>
+          <Link href={item.href} className="relative block w-fit mx-auto">
+            <div className="absolute inset-0 bg-black rounded-md opacity-0 transition-opacity duration-300 hover:opacity-30 z-10" />
             <Image
               src={item.image}
               alt={item.title}
