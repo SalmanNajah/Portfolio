@@ -14,7 +14,7 @@ const projects = [
     description: "Connecting Minds, Crafting Progress.",
     sourcecode: "https://github.com/so-sc/devhost-2025",
     href: "https://devhost.sosc.org.in",
-    image: "/devhost2025.png",
+    image: "/image7.png",
     skills: ["Firebase", "React", "JavaScript", "TailwindCSS"]
   },
   {
