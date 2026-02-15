@@ -10,6 +10,14 @@ import { IconBrandGithub } from '@tabler/icons-react'
 
 const projects = [
   {
+    title: "Devhost 2025 website",
+    description: "Connecting Minds, Crafting Progress.",
+    sourcecode: "https://github.com/so-sc/devhost-2025",
+    href: "https://devhost.sosc.org.in",
+    image: "/devhost2025.png",
+    skills: ["Firebase", "React", "JavaScript", "TailwindCSS"]
+  },
+  {
     title: "Portfolio Website Template",
     description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
     sourcecode: "https://github.com/salmannajah/portfolio",
