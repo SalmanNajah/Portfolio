@@ -50,7 +50,7 @@ const GithubGraph = () => {
                     <div className="w-full overflow-x-auto overflow-y-visible">
                         <div className="min-w-fit flex justify-center p-2">
                             <div className="w-max">
-                                {loading ? (
+                                {loading || contributions.length === 0 ? (
                                     <HeatmapSkeleton />
                                 ) : (
                                     <ActivityCalendar
