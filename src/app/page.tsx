@@ -1,5 +1,5 @@
 // import LandingBlogs from "@/components/blog/landing-blog";
-import GithubWrapper from "@/components/github-wrapper/github-wrapper";
+import GithubGraph from "@/components/ui/github";
 import MainLanding from "@/components/main-landing";
 import ProjectHome from "@/components/projects/projects-home";
 // import UpcomingProjects from "@/components/projects/upcoming-projects";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <MainLanding />
-      <GithubWrapper />
+      <GithubGraph />
       <ProjectHome />
       {/* <UpcomingProjects limit={2} /> */}
       {/* <LandingBlogs /> */}

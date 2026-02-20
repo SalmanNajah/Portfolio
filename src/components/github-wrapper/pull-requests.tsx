@@ -5,18 +5,10 @@ import { IconArrowDown, IconArrowUp, IconGitMerge } from "@tabler/icons-react";
 import { Skeleton } from "../ui/skeleton";
 
 type PR = {
-    id: number;
+    id: string;
     title: string;
     url: string;
     repo: string;
-    number: number;
-};
-
-type SearchIssue = {
-    id: number;
-    title: string;
-    html_url: string;
-    repository_url?: string;
     number: number;
 };
 
@@ -32,7 +24,7 @@ export function SkeletonDemo() {
     )
 }
 
-export const PullRequests = ({ username = "SalmanNajah" }: { username?: string }) => {
+export const PullRequests = () => {
     const [prs, setPrs] = useState<PR[]>([]);
     const [loading, setLoading] = useState(true);
     const [showAll, setShowAll] = useState(false);
@@ -40,23 +32,10 @@ export const PullRequests = ({ username = "SalmanNajah" }: { username?: string }
 
     useEffect(() => {
         const fetchPRs = async () => {
-            const q = `is:pr author:${username} is:merged`;
-            // fetch more items so we can show 10 initially and reveal the rest on demand
-            const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=50`;
-
             try {
-                const res = await fetch(url);
+                const res = await fetch("/api/github/pull-requests");
                 const data = await res.json();
-
-                const items = (data.items || []).map((it: SearchIssue) => ({
-                    id: it.id,
-                    title: it.title,
-                    url: it.html_url,
-                    repo: (it.repository_url || "").replace("https://api.github.com/repos/", ""),
-                    number: it.number,
-                }));
-
-                setPrs(items);
+                setPrs(data.pullRequests ?? []);
             } catch {
                 setPrs([]);
             } finally {
@@ -65,7 +44,7 @@ export const PullRequests = ({ username = "SalmanNajah" }: { username?: string }
         };
 
         fetchPRs();
-    }, [username]);
+    }, []);
 
     return (
         <div className="px-2 pt-4">

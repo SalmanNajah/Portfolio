@@ -1,42 +1,41 @@
 "use client";
-import { useCallback, useState } from "react";
-import dynamic from 'next/dynamic';
-import { Activity } from 'react-github-calendar';
+import { useEffect, useState } from "react";
+import { ActivityCalendar } from 'react-activity-calendar';
 import Container from "../container";
 import SideHeaders from "../sideheaders";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { PullRequests } from "../github-wrapper/pull-requests";
+import HeatmapSkeleton from "./heatmap-skeleton";
 
-const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
-    ssr: false,
-    loading: () => <div className="h-[170px] w-full animate-pulse" />,
-});
-
-type GithubGraphProps = {
-    username: string;
-    blockMargin?: number;
-    colorPallete?: string[];
+type Activity = {
+    date: string;
+    count: number;
+    level: number;
 };
 
-const GithubGraph = ({
-    username,
-    blockMargin,
-}: GithubGraphProps) => {
+const GithubGraph = () => {
+    const [contributions, setContributions] = useState<Activity[]>([]);
     const [totalCount, setTotalCount] = useState(0);
+    const [loading, setLoading] = useState(true);
     const { resolvedTheme } = useTheme();
 
-    const processContributions = useCallback((contributions: Activity[]) => {
-        // Calculate total count after rendering
-        setTimeout(() => {
-            const total = contributions
-                .map((el) => el.count)
-                .reduce((acc, curr) => acc + curr, 0);
+    useEffect(() => {
+        const fetchContributions = async () => {
+            try {
+                const res = await fetch("/api/github/contributions");
+                const data = await res.json();
+                setContributions(data.contributions ?? []);
+                setTotalCount(data.totalContributions ?? 0);
+            } catch {
+                setContributions([]);
+                setTotalCount(0);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-            setTotalCount(total);
-        }, 0);
-
-        return contributions;
+        fetchContributions();
     }, []);
 
     return (
@@ -51,13 +50,22 @@ const GithubGraph = ({
                     <div className="w-full overflow-x-auto overflow-y-visible">
                         <div className="min-w-fit flex justify-center p-2">
                             <div className="w-max">
-                                <GitHubCalendar
-                                    username={username}
-                                    transformData={processContributions}
-                                    totalCount={totalCount}
-                                    colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-                                    blockMargin={blockMargin}
-                                />
+                                {loading ? (
+                                    <HeatmapSkeleton />
+                                ) : (
+                                    <ActivityCalendar
+                                        data={contributions}
+                                        labels={{
+                                            totalCount: `${totalCount} contributions in the last year`,
+                                        }}
+                                        theme={{
+                                            light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+                                            dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+                                        }}
+                                        colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+                                        blockMargin={3}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
