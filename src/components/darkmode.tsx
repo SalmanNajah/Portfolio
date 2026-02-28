@@ -25,7 +25,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="text-black dark:text-white cursor-pointer rounded-full shadow-standard p-2 transition-all duration-300 ease-in-out hover:scale-103"
+      className="text-black dark:text-white cursor-pointer rounded-full p-2 transition-all duration-300 ease-in-out hover:shadow-standard"
       aria-label="Toggle dark mode"
     >
       <motion.div

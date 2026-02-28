@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { ActivityCalendar } from 'react-activity-calendar';
+import { ActivityCalendar } from "react-activity-calendar";
 import Container from "../container";
 import SideHeaders from "../sideheaders";
 import Link from "next/link";
@@ -13,6 +13,23 @@ type Activity = {
     count: number;
     level: number;
 };
+
+const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+    "Prisma",
+    "Git",
+    "Docker",
+    "Postman"
+];
 
 const GithubGraph = () => {
     const [contributions, setContributions] = useState<Activity[]>([]);
@@ -72,6 +89,20 @@ const GithubGraph = () => {
                 </Link>
 
                 <PullRequests />
+
+                <div className="pt-4 px-2">
+                    <h2 className="text-md font-bold text-neutral-600 dark:text-neutral-200">Skills</h2>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                        {skills.map((skill) => (
+                            <span
+                                key={skill}
+                                className="inline-flex items-center rounded-full border border-neutral-200/80 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700 dark:border-neutral-700/70 dark:bg-neutral-900 dark:text-neutral-100"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </Container>
         </div>
     );

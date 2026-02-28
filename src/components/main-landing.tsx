@@ -1,68 +1,116 @@
 "use client";
-import React from 'react'
-import Container from './container'
-import { motion } from 'motion/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Designation from './designation';
-import { IBM_Plex_Mono } from 'next/font/google'
-import { CornerArtifacts } from './ui/corner-artifacts';
 
-const ibmPlex = IBM_Plex_Mono({
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { Geist_Mono } from "next/font/google";
+import Container from "./container";
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
+
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
 });
 
+const istFormatter = new Intl.DateTimeFormat("en-IN", {
+  timeZone: "Asia/Kolkata",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
+
+const getIstTime = () => istFormatter.format(new Date());
+
 const MainLanding = () => {
+  const [istTime, setIstTime] = useState(getIstTime);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIstTime(getIstTime);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div>
-      <Container className='pt-30'>
-        <div className="z-10 relative min-h-full flex flex-col md:flex-row md:justify-between pb-8">
-          <div className={`md:hidden text-xs flex justify-end items-end pr-2 text-secondary ${ibmPlex.className}`}>flex justify-start</div>
-          <motion.div
-            className="order-1 md:order-2 mb-4 md:mb-0 flex bg-[repeating-linear-gradient(45deg,_#d4d4d4_0,_#d4d4d4_1px,_transparent_1px,_transparent_5px)] dark:bg-[repeating-linear-gradient(45deg,_#262626_0,_#262626_1px,_transparent_1px,_transparent_5px)] border-1 border-color-new"
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <Link href="/" className='p-2 border-r-1 md:border-0 border-color-new bg-side-header'>
-              <Image src="/avatar.png" alt="Logo" width={150} height={150} className="rounded-xl object-cover border-secondary border w-32 h-32 md:w-48 md:h-48" />
-            </Link>
-          </motion.div>
-          <div className="order-2 md:order-1 flex flex-col justify-center">
-            <div className='flex flex-col gap-2'>
-              <div>
-                <div className={`hidden md:block text-xs justify-self-end pr-2 text-secondary ${ibmPlex.className}`}>text-5xl tracking-tighter</div>
-                <div className={`md:hidden text-xs justify-self-end pr-2 text-secondary ${ibmPlex.className}`}>text-3xl tracking-tighter</div>
-                <motion.h1
-                  initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-                  whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  className="md:order-1 order-2 text-3xl md:text-5xl font-semibold text-primary dark:text-white tracking-tighter flex md:justify-self-start border-1 border-dashed border-color-new mx-auto w-full track">
-                  Salman Najah.
-                  <CornerArtifacts />
-                </motion.h1>
+    <>
+      <Container>
+        <section className="relative overflow-hidden bg-container -mx-4 md:-mx-10">
+          <div className="hero-cover-abstract w-full aspect-[16/9] md:aspect-[16/4]" />
+
+          <div className="absolute left-6 md:left-14 top-32 flex items-center">
+            <div className="rounded-full border border-neutral-200/80 bg-white/95 p-1 dark:bg-neutral-900/95 dark:border-neutral-700/80">
+              <Image
+                src="/avatar.png"
+                alt="Salman Najah"
+                width={180}
+                height={180}
+                className="h-28 w-28 md:h-40 md:w-40 rounded-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="px-4 md:px-10 pb-6 md:pb-8 pt-2 md:pt-4">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-10">
+              <div className="mt-10 md:mt-16">
+                <h1
+                  className={`${geistMono.className} text-3xl md:text-4xl font-medium tracking-tight text-primary dark:text-white`}
+                >
+                  Salman Najah
+                </h1>
+                <p className="mt-1 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                  Software Developer
+                </p>
+                <p className="mt-2 max-w-xl text-sm text-black dark:text-white leading-relaxed">
+                I build web applications and actively contribute to open source.
+                <br />
+                Working with TypeScript, React, Next.js, and backend systems.
+                <br />
+                Exploring Solana.
+                </p>
               </div>
-              <div className='flex flex-row gap-2 md:order-2 order-1 my-2 md:mt-4'>
-                <Designation designation="OSS Contributor" />
-                <Designation designation="Web Developer" />
+
+              <div className="mt-0 md:mt-2 flex flex-row md:flex-col items-center md:items-end md:gap-38 gap-22">
+                <div className="flex gap-2">
+                  <a
+                    href="https://github.com/salmannajah"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200/80 bg-white/80 text-neutral-700 transition hover:border-neutral-400 dark:border-neutral-700/70 dark:bg-neutral-900/80 dark:text-neutral-100 dark:hover:border-neutral-400"
+                  >
+                    <IconBrandGithub className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/salmannajah"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200/80 bg-white/80 text-neutral-700 transition hover:border-neutral-400 dark:border-neutral-700/70 dark:bg-neutral-900/80 dark:text-neutral-100 dark:hover:border-neutral-400"
+                  >
+                    <IconBrandLinkedin className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://x.com/slmntwt"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200/80 bg-white/80 text-neutral-700 transition hover:border-neutral-400 dark:border-neutral-700/70 dark:bg-neutral-900/80 dark:text-neutral-100 dark:hover:border-neutral-400"
+                  >
+                    <IconBrandX className="h-4 w-4" />
+                  </a>
+                </div>
+                {istTime && (
+                  <div className="flex items-center gap-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className={`${geistMono.className} text-sm text-neutral-500 dark:text-neutral-400`}>
+                      {istTime} IST
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
-
-            <motion.p initial={{ opacity: 0, filter: "blur(8px)", y: -20 }}
-              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true, amount: 0.1 }}
-              className="text-neutral-500 md:text-base pt-4 max-w-90 flex justify-self-start md:max-w-lg">
-              I build things for the web, ship often, and learn something new every day.
-            </motion.p>
           </div>
-        </div>
+        </section>
       </Container>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default MainLanding
+export default MainLanding;

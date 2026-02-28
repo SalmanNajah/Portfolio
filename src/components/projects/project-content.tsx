@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 import Link from 'next/link'
@@ -16,14 +16,6 @@ const projects = [
     href: "https://devhost.sosc.org.in",
     image: "/image7.png",
     skills: ["Firebase", "React", "JavaScript", "TailwindCSS"]
-  },
-  {
-    title: "Portfolio Website Template",
-    description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
-    sourcecode: "https://github.com/salmannajah/portfolio",
-    href: "https://template.salmannajah.dev",
-    image: "/portfolio.png",
-    skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
   {
     title: "Hume AI",
@@ -48,42 +40,71 @@ const projects = [
     href: "https://snippet-app-two.vercel.app/",
     image: "/snippets.png",
     skills: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"]
-  }
+  },
+  {
+    title: "Portfolio Website Template",
+    description: "A modern, responsive portfolio template built with HTML, CSS, and JavaScript.",
+    sourcecode: "https://github.com/salmannajah/portfolio",
+    href: "https://template.salmannajah.dev",
+    image: "/portfolio.png",
+    skills: ["HTML", "CSS", "JavaScript", "Responsive Design"]
+  },
 ];
 
-const ProjectContent = ({ limit }: { limit?: number }) => {
-  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+const ProjectContent = () => {
+  const pageSize = 4;
+  const [visibleCount, setVisibleCount] = useState(pageSize);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-      {displayedProjects.map((item, idx) => (
-        <motion.div
-          key={idx}
-          className="bg-white dark:bg-[#1b1b1a] p-2 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
-          initial={{ opacity: 0, filter: "blur(6px)", y: 10 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
-        >
-          <Link href={item.href} className="relative block w-fit mx-auto">
-            <div className="absolute inset-0 bg-black rounded-md opacity-0 transition-opacity duration-300 hover:opacity-30 z-10" />
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={350}
-              height={200}
-              className="mb-4 rounded-md flex justify-self-center mx-auto mt-4"
-            />
-          </Link>
-          <div className="mx-auto px-4 pb-6">
-            <div className='flex justify-between items-center'>
-            <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-            <Link href={item.sourcecode}><IconBrandGithub className='h-4 w-4 mb-2 text-neutral-700 dark:text-neutral-200'/></Link>
+    <div className="mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.slice(0, visibleCount).map((item, idx) => (
+          <motion.div
+            key={idx}
+            className="bg-white dark:bg-[#1b1b1a] p-2 shadow-standard dark:shadow-[var(--shadow-standard)] hover:shadow-derek dark:hover:shadow-[var(--shadow-derek)]"
+            initial={{ opacity: 0, filter: "blur(6px)", y: 10 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 0.1 * (idx + 1), ease: "easeInOut" }}
+          >
+            <Link href={item.href} className="relative block w-fit mx-auto">
+              <div className="absolute inset-0 bg-black rounded-md opacity-0 transition-opacity duration-300 hover:opacity-30 z-10" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={350}
+                height={200}
+                className="mb-4 rounded-md flex justify-self-center mx-auto mt-4"
+              />
+            </Link>
+            <div className="mx-auto px-4 pb-6">
+              <div className='flex justify-between items-center'>
+                <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                <Link href={item.sourcecode}><IconBrandGithub className='h-4 w-4 mb-2 text-neutral-700 dark:text-neutral-200'/></Link>
+              </div>
+              <p className="text-sm text-secondary">{item.description}</p>
+              <p className='italic pt-4 text-xs text-neutral-700 dark:text-neutral-400'>{item.skills.join(", ")}</p>
             </div>
-            <p className="text-sm text-secondary">{item.description}</p>
-            <p className='italic pt-4 text-xs text-neutral-700 dark:text-neutral-400'>{item.skills.join(", ")}</p>
-          </div>
-        </motion.div>
-      ))}
+          </motion.div>
+        ))}
+      </div>
+
+      {projects.length > pageSize && (
+        <div className="mt-6 flex justify-center">
+          <button
+            type="button"
+            onClick={() =>
+              setVisibleCount((current) =>
+                current >= projects.length
+                  ? pageSize
+                  : Math.min(current + pageSize, projects.length)
+              )
+            }
+            className="inline-flex items-center gap-2 rounded-full border border-neutral-300/70 bg-neutral-100/70 px-4 py-2 text-xs font-medium text-neutral-700 shadow-[0_0_0_1px_rgba(255,255,255,0.2)] backdrop-blur-md transition hover:bg-neutral-200/80 dark:border-neutral-700/80 dark:bg-neutral-900/70 dark:text-neutral-100"
+          >
+            {visibleCount >= projects.length ? 'See less' : `See more (${projects.length - visibleCount})`}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

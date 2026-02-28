@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
-import { ViewTransitions } from 'next-view-transitions'
+import { ViewTransitions } from "next-view-transitions";
 import Footer from "@/components/footer/footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
-
-// const geist = Geist({
-//   subsets: ["latin"]
-// })
 
 export const metadata: Metadata = {
   title: "Salman Najah | Portfolio",
@@ -70,7 +66,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased bg-neutral-100 dark:bg-black`}>
+      <body className={`${geistMono.className} antialiased bg-neutral-100 dark:bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col">
               <Navbar />

@@ -10,7 +10,7 @@ const Footer = () => {
                     <ul className="list-none space-y-3">
                         <li><Link href="/" className="hover:text-neutral-800 dark:hover:text-neutral-300">Home</Link></li>
                         {/* <li><Link href="/contact" className="hover:text-neutral-800 dark:hover:text-neutral-300">Contact</Link></li> */}
-                        <li><Link href="/projects" className="hover:text-neutral-800 dark:hover:text-neutral-300">Projects</Link></li>
+                        <li><Link href="#projects" className="hover:text-neutral-800 dark:hover:text-neutral-300">Projects</Link></li>
                         <li><Link href="/links" className="hover:text-neutral-800 dark:hover:text-neutral-300">Links</Link></li>
                     </ul>
                     <ul className="list-none space-y-3">
